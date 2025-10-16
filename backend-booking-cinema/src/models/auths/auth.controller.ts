@@ -7,6 +7,7 @@ import { UserModel } from "./auth.model";
 import sendMail from "../../utils/sendMail";
 import jwt from "jsonwebtoken";
 import { resetPasswordTemplate } from "../../utils/resetPasswordTemplate";
+import { generateRefreshToken, generateToken } from "../../utils/jwt";
 export const registerUser = async (req: Request, res: Response): Promise<void> => {
     try {
         const user = await AuthService.register(req.body);
@@ -48,6 +49,17 @@ export const Admin = async (req: Request, res: Response): Promise<void> => {
         res.status(500).json({ message: error.message || "Lỗi máy chủ nội bộ" });
     }
 };
+export const loginAdmin = async (req: Request, res: Response) => {
+    const { email, password } = req.body;
+    const admin = await UserModel.findOne({ email, role: "admin" });
+    if (!admin) throw new Error("Tài khoản admin không tồn tại");
+    const isMatch = await bcrypt.compare(password, admin.password);
+    if (!isMatch) throw new Error("Sai mật khẩu");
+    const token = generateToken({ id: admin._id.toString(), role: "admin" });
+    const refreshToken = generateRefreshToken({ id: admin._id.toString(), role: "admin" });
+    successResponse(res, { token, refreshToken, admin }, "Đăng nhập admin thành công");
+};
+
 // Gửi mail quên mật khẩu
 export const forgotPassword = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -96,3 +108,4 @@ export const resetPassword = async (req: Request, res: Response): Promise<void> 
         res.status(500).json({ message: error.message || "Lỗi server" });
     }
 };
+

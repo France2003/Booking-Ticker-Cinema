@@ -7,9 +7,11 @@ import AuthForm from "../../components/auth/AuthForm";
 import AuthLayout from "../../components/AuthLayout";
 import ImgBackground from "../../assets/img/bgrimg.jpg";
 function Register() {
+  const [fullname, setFullname] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [dateofbirth, setDateofbirth] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ function Register() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await registerUser({ phone, email, password });
+      await registerUser({fullname, dateofbirth, phone, email, password });
       toast.success("Đăng ký thành công!");
       setTimeout(() => navigate("/login"), 1500);
     } catch (error: any) {
@@ -37,6 +39,10 @@ function Register() {
       <AuthLayout rightBgUrl={ImgBackground}>
         <AuthForm
           type="register"
+          fullname={fullname}
+          setFullname={setFullname}
+          dateofbirth={dateofbirth}
+          setDateofbirth={setDateofbirth}
           phone={phone}
           setPhone={setPhone}
           email={email}

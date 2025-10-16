@@ -1,5 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 #root{
-    font-family: "Montserrat", serif;
+    font-family: "Saira", sans-serif;
     font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    background-color: #0F1D2F;
+}
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px #00eaff,
+      0 0 20px #ff00ff,
+      0 0 30px #ffff00;
+  }
+  50% {
+    text-shadow: 
+      0 0 20px #ff00ff,
+      0 0 40px #00eaff,
+      0 0 60px #ffff00;
+  }
+}
+.glow-text {
+  animation: glow 2s ease-in-out infinite;
 }

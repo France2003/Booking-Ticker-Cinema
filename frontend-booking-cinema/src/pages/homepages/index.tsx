@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom"
+import Slides from "../../components/Slides"
 
 const HomePages = () => {
   return (
     <>
-      <div>Xin chào</div>
-      <Link to="/register">Đăng ký</Link>
+      <div className="pt-4 px-4 md:px-8 lg:px-16">
+        <Slides />
+      </div>
     </>
   )
 }

@@ -9,7 +9,7 @@ if (!process.env.MONGO_DB) {
 if (!process.env.JWT_SECRET) {
   throw new Error("JWT_SECRET is not defined in .env file!");
 }
-console.log("process.env.JWT_SECRET:", process.env.JWT_SECRET);
+// console.log("process.env.JWT_SECRET:", process.env.JWT_SECRET);
 
 export const ENV = {
   PORT: parseInt(process.env.PORT, 10),

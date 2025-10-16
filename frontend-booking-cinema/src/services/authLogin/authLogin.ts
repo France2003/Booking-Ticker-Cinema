@@ -6,6 +6,12 @@ export const loginUser = async (data: LoginDTO) => {
     });
     return response.data;
 };
+export const loginAdmin = async (data: LoginDTO) => {
+    const response = await api.post<LoginResponse>("/api/auth/admin/login", data, {
+        withCredentials: true,
+    });
+    return response.data;
+};
 export const refreshToken = async (refreshToken: string) => {
     const response = await api.post("/api/auth/refresh-token", {
         refreshToken,

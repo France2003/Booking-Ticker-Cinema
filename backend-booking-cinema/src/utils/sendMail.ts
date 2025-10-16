@@ -14,7 +14,7 @@ const sendMail = async (to: string, subject: string, html: string) => {
             from: `"Booking Cinema 🎬" <${process.env.EMAIL_USER}>`,
             to,
             subject,
-            html, // có thể là text hoặc html
+            html,
         };
         // Gửi mail
         await transporter.sendMail(mailOptions);
