@@ -19,7 +19,7 @@ const AddMovieForm = ({ onSuccess }: { onSuccess?: () => void }) => {
         const file = e.target.files[0];
         type === "poster" ? setPosterFile(file) : setTrailerFile(file);
     };
-    
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const tempData = { ...formData, anhPoster: posterFile ? "temp" : "", Trailer: trailerFile ? "temp" : "" };
@@ -27,7 +27,7 @@ const AddMovieForm = ({ onSuccess }: { onSuccess?: () => void }) => {
         if (errorMsg) return toast.error(errorMsg);
         setLoading(true);
         try {
-            const token = localStorage.getItem("token"); 
+            const token = localStorage.getItem("token");
             const { posterUrl, trailerUrl } = await uploadFiles(posterFile, trailerFile, token);
             const payload: Omit<Movie, "_id"> = {
                 ...formData,
@@ -47,6 +47,7 @@ const AddMovieForm = ({ onSuccess }: { onSuccess?: () => void }) => {
                 ngayKhoiChieu: formData.ngayKhoiChieu!,
                 danhGia: formData.danhGia!,
                 trangThai: formData.trangThai!,
+                isHot: !!formData.isHot,
             };
             await createMovie(payload);
             toast.success("Thêm phim thành công!");
@@ -75,7 +76,7 @@ const AddMovieForm = ({ onSuccess }: { onSuccess?: () => void }) => {
                     { name: "thoiLuong", placeholder: "Thời lượng (phút)", type: "number" },
                     { name: "ngonNgu", placeholder: "Ngôn ngữ", type: "text" },
                     { name: "ngayKhoiChieu", placeholder: "Ngày khởi chiếu", type: "date" },
-                    { name: "danhGia", placeholder: "Đánh giá", type: "text" },
+                    { name: "danhGia", placeholder: "Đánh giá", type: "number" },
                     { name: "Age", placeholder: "Độ tuổi", type: "number" },
                 ].map(field => (
                     <input
@@ -132,7 +133,18 @@ const AddMovieForm = ({ onSuccess }: { onSuccess?: () => void }) => {
                 <option value="dangChieu">Đang chiếu</option>
                 <option value="sapChieu">Sắp chiếu</option>
             </select>
-
+            <div className="flex items-center gap-2 border border-gray-300 p-3 rounded-lg">
+                <input
+                    type="checkbox"
+                    name="isHot"
+                    checked={!!formData.isHot}
+                    onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, isHot: e.target.checked }))
+                    }
+                    className="w-5 h-5 accent-red-600"
+                />
+                <label className="text-gray-700 font-medium">HOT 🔥</label>
+            </div>
             <button
                 type="submit"
                 disabled={loading}

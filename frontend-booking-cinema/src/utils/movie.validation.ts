@@ -14,7 +14,7 @@ export const validateMovieForm = (movie: Partial<Movie>): string | null => {
         "Age",
         "trangThai",
     ];
-    for (const field of requiredFields) {
+    for (const field of requiredFields as (keyof Movie)[]) {
         if (!movie[field]) {
             return `Vui lòng điền ${field}`;
         }

@@ -7,12 +7,15 @@ export interface Movie {
     daoDien: string;
     dienVien: string;
     theLoai: string;
-    thoiLuong: number;
+    thoiLuong?: number;
     ngonNgu: string;
     ngayKhoiChieu: string; // ISO string
-    danhGia: string;
-    Age: number;
+    danhGia?: number;
+    Age?: number;
     anhPoster: string;
     Trailer: string;
     trangThai: TrangThai;
+    isHot?: boolean;
+    likesCount?: number;
+    isLiked?: boolean;
 }

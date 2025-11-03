@@ -1,3 +1,4 @@
+import { Types } from "mongoose";
 export interface IMovie {
     maPhim: number;
     tieuDe: string;
@@ -8,9 +9,12 @@ export interface IMovie {
     thoiLuong: number;
     ngonNgu: string;
     ngayKhoiChieu: Date;
-    danhGia: string;
+    danhGia: number;            // Điểm đánh giá (IMDb, hoặc trung bình)
+    luotXem: number; 
     Age: number;
     anhPoster: string;
     Trailer: string;
     trangThai: "dangChieu" | "sapChieu";
+    isHot: boolean;   
+    likes: Types.ObjectId[]
 }

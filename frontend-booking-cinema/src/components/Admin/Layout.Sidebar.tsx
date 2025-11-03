@@ -6,9 +6,10 @@ const Sidebar = () => {
         { path: "/quan-ly-phim", label: "Quản lý phim" },
         { path: "/quan-ly-dat-ve-xem-phim", label: "Quản lý đặt vé xem phim" },
         { path: "/quan-ly-xuat-chieu", label: "Quản lý xuất chiếu" },
-        { path: "/quan-ly-rap", label: "Quản lý rạp" },
+        { path: "/quan-ly-phong-chieu", label: "Quản lý phòng chiếu" },
         { path: "/quan-ly-nguoi-dung", label: "Quản lý người dùng" },
         { path: "/quan-ly-khuyen-mai", label: "Quản lý khuyến mãi" },
+        { path: "/quan-ly-binh-luan", label: "Quản lý bình luận" },
     ];
     return (
         <aside className="bg-white shadow-md w-64 min-h-screen p-4 hidden md:block">

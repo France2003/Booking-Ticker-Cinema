@@ -5,7 +5,7 @@ import NavItem from "./NavItem";
 import LogoMetiz from "./Logo";
 import Avatar from "./Avatar";
 import { useUser } from "../../contexts/UserContext";
-
+import NotificationBell from "../../components/Admin/NotificationBell";
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { user, logout } = useUser(); // lấy user từ context
@@ -31,11 +31,11 @@ const Header = () => {
               label="Phim"
               submenu={[
                 { label: "Phim đang chiếu", href: "/phim-dang-chieu" },
-                { label: "Phim sắp chiếu", href: "/phim-sap-chieu" },
+                { label: "Phim sắp công chiếu", href: "/phim-sap-cong-chieu" },
               ]}
             />
-            <NavItem label="Ưu đãi" href="/uu-dai" />
-            <NavItem label="Tin tức phim" href="/tin-tuc" />
+            <NavItem label="Ưu đãi" href="/promotions" />
+            <NavItem label="Liên hệ" href="/contact" />
             <NavItem
               label="Thành viên"
               submenu={[
@@ -46,7 +46,10 @@ const Header = () => {
           </ul>
           <div className="hidden md:flex items-center px-4 md:px-8 lg:px-16">
             {user ? (
-              <Avatar  />
+              <>
+                <NotificationBell userId={user._id} />
+                <Avatar />
+              </>
             ) : (
               <>
                 <Link to="/login" className="text-sm hover:text-gray-300">
@@ -93,11 +96,11 @@ const Header = () => {
               label="Phim"
               submenu={[
                 { label: "Phim đang chiếu", href: "/phim-dang-chieu" },
-                { label: "Phim sắp chiếu", href: "/phim-sap-chieu" },
+                { label: "Phim sắp công chiếu", href: "/phim-sap-cong-chieu" },
               ]}
             />
-            <NavItem label="Ưu đãi" href="/uu-dai" />
-            <NavItem label="Tin tức phim" href="/tin-tuc" />
+            <NavItem label="Ưu đãi" href="/promotions" />
+            <NavItem label="Liên hệ" href="/contact" />
             <NavItem
               label="Thành viên"
               submenu={[

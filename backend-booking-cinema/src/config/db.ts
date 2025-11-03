@@ -1,10 +1,15 @@
 import mongoose from "mongoose";
 import { ENV } from "./env";
-
+import { startMovieStatusWatcher } from "../models/showtimes/movieStatusWatcher";
+import { startMovieStatusCron } from "../cron/movieCron";
+import { startAutoShowtimeCron } from "../cron/autoShowtime.cron";
 export const connectMongoDB = async (): Promise<void> => {
   try {
     await mongoose.connect(ENV.MONGO_DB);
     console.log("Connected to MongoDB:", ENV.MONGO_DB);
+    startMovieStatusWatcher();   // 👀 Theo dõi thay đổi trạng thái phim
+    startMovieStatusCron();      // 🕐 Cron cập nhật trạng thái phim
+    startAutoShowtimeCron();     // 🎬 Cron tạo suất chiếu tự động
   } catch (error) {
     console.error("MongoDB connection error:", error);
     process.exit(1); 

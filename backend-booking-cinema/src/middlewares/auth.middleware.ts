@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { verifyToken } from "../utils/jwt";
 export interface AuthRequest extends Request {
-  user?: { id: string; role: string };
+  user?: { id: string; role: string; fullname?: string; };
 }
 export const requireAuth = (req: AuthRequest, res: Response, next: NextFunction):void => {
   const header = req.headers["authorization"];

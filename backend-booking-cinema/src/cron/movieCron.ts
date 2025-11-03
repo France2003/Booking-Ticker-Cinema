@@ -5,7 +5,7 @@ import { logToFile } from "./log";
 export const startMovieStatusCron = (): void => {
   // 🕐 Lên lịch chạy mỗi phút (test). Khi deploy thật thì nên đổi thành: "0 0 * * *"
   cron.schedule(
-    "0 0 * * *",
+    "30 8 * * *", // chạy lúc 8:30 sáng mỗi ngày
     async () => {
       await updateMoviesNow();
     },
