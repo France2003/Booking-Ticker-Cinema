@@ -16,17 +16,13 @@ const room_model_1 = require("../room/room.model");
 const sendEmailTicker_1 = require("../../utils/sendEmailTicker");
 const vnpay_1 = require("../../utils/vnpay");
 const nanoid_1 = require("nanoid");
-/**
- * 🧾 Tạo yêu cầu thanh toán VNPay
- */
+/** 🧾 Tạo yêu cầu thanh toán VNPay */
 const createVNPayPayment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
         const userId = (_a = req.user) === null || _a === void 0 ? void 0 : _a.id;
         const { showtimeId, selectedSeats } = req.body;
-        const showtime = yield showtime_model_1.Showtime.findById(showtimeId)
-            .populate("roomId")
-            .populate("movieId");
+        const showtime = yield showtime_model_1.Showtime.findById(showtimeId).populate("roomId").populate("movieId");
         if (!showtime) {
             res.status(404).json({ message: "Không tìm thấy suất chiếu" });
             return;
@@ -36,7 +32,6 @@ const createVNPayPayment = (req, res) => __awaiter(void 0, void 0, void 0, funct
             res.status(404).json({ message: "Không tìm thấy phòng" });
             return;
         }
-        // Kiểm tra ghế đã đặt chưa
         const invalidSeats = room.seats.filter((s) => selectedSeats.includes(s.seatNumber) && s.isBooked);
         if (invalidSeats.length > 0) {
             res.status(400).json({
@@ -45,10 +40,8 @@ const createVNPayPayment = (req, res) => __awaiter(void 0, void 0, void 0, funct
             });
             return;
         }
-        // Tính tổng tiền
         const seatsInfo = room.seats.filter((s) => selectedSeats.includes(s.seatNumber));
         const totalPrice = seatsInfo.reduce((sum, s) => sum + s.price, 0);
-        // Tạo booking tạm
         const bookingCode = "BK-" + (0, nanoid_1.nanoid)(6).toUpperCase();
         const booking = yield booking_model_1.Booking.create({
             userId,
@@ -60,7 +53,6 @@ const createVNPayPayment = (req, res) => __awaiter(void 0, void 0, void 0, funct
             bookingCode,
             paymentStatus: "pending",
         });
-        // Tạo URL thanh toán
         const ipAddr = req.headers["x-forwarded-for"] || req.socket.remoteAddress || "";
         const paymentUrl = (0, vnpay_1.buildVNPayUrl)(booking.bookingCode, booking.totalPrice, ipAddr);
         res.status(200).json({ paymentUrl, booking });
@@ -71,7 +63,7 @@ const createVNPayPayment = (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
 });
 exports.createVNPayPayment = createVNPayPayment;
-//🔁 Callback từ VNPay sau khi thanh toán
+/** 🔁 Callback từ VNPay */
 const vnpayReturn = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
@@ -119,9 +111,7 @@ const vnpayReturn = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.vnpayReturn = vnpayReturn;
-/**
- * 📜 Lấy danh sách vé của người dùng
- */
+/** 📜 Lấy danh sách vé của người dùng */
 const getMyBookings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {

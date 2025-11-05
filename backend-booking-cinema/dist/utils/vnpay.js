@@ -11,9 +11,7 @@ const vnp_TmnCode = process.env.VNP_TMNCODE;
 const vnp_HashSecret = process.env.VNP_HASHSECRET;
 const vnp_Url = process.env.VNP_URL;
 const vnp_ReturnUrl = process.env.VNP_RETURNURL;
-/**
- * Tạo URL thanh toán VNPay
- */
+/** 🧾 Tạo URL thanh toán VNPay */
 function buildVNPayUrl(bookingCode, total, ipAddr) {
     const date = new Date();
     const createDate = date.toISOString().replace(/[-T:.Z]/g, "").slice(0, 14);
@@ -39,9 +37,7 @@ function buildVNPayUrl(bookingCode, total, ipAddr) {
     params["vnp_SecureHash"] = secureHash;
     return `${vnp_Url}?${qs_1.default.stringify(params, { encode: true })}`;
 }
-/**
- * Xác minh chữ ký callback từ VNPay
- */
+/** ✅ Xác minh chữ ký callback */
 function verifyVNPay(query) {
     const secureHash = query["vnp_SecureHash"];
     delete query["vnp_SecureHash"];

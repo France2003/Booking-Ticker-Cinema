@@ -32,6 +32,7 @@
   "scripts": {
     "start": "ts-node src/sever.ts",
     "build": "tsc",
+    "start:prod": "node dist/sever.ts",
     "dev": "nodemon src/sever.ts"
   },
   "devDependencies": {
