@@ -31,6 +31,7 @@
   },
   "scripts": {
     "start": "ts-node src/sever.ts",
+    "build": "tsc",
     "dev": "nodemon src/sever.ts"
   },
   "devDependencies": {

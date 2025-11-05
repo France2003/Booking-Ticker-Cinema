@@ -7,26 +7,24 @@ import { sendETicket } from "../../utils/sendEmailTicker";
 import { buildVNPayUrl, verifyVNPay } from "../../utils/vnpay";
 import { nanoid } from "nanoid";
 
-/**
- * 🧾 Tạo yêu cầu thanh toán VNPay
- */
+/** 🧾 Tạo yêu cầu thanh toán VNPay */
 export const createVNPayPayment = async (req: AuthRequest, res: Response): Promise<void> => {
     try {
         const userId = req.user?.id;
         const { showtimeId, selectedSeats } = req.body;
-        const showtime = await Showtime.findById(showtimeId)
-            .populate("roomId")
-            .populate("movieId");
+
+        const showtime = await Showtime.findById(showtimeId).populate("roomId").populate("movieId");
         if (!showtime) {
             res.status(404).json({ message: "Không tìm thấy suất chiếu" });
-            return;
+            return
         }
+
         const room = await Room.findById(showtime.roomId);
         if (!room) {
             res.status(404).json({ message: "Không tìm thấy phòng" });
-            return;
+            return
         }
-        // Kiểm tra ghế đã đặt chưa
+
         const invalidSeats = room.seats.filter(
             (s) => selectedSeats.includes(s.seatNumber) && s.isBooked
         );
@@ -37,10 +35,10 @@ export const createVNPayPayment = async (req: AuthRequest, res: Response): Promi
             });
             return;
         }
-        // Tính tổng tiền
+
         const seatsInfo = room.seats.filter((s) => selectedSeats.includes(s.seatNumber));
         const totalPrice = seatsInfo.reduce((sum, s) => sum + s.price, 0);
-        // Tạo booking tạm
+
         const bookingCode = "BK-" + nanoid(6).toUpperCase();
         const booking = await Booking.create({
             userId,
@@ -52,9 +50,8 @@ export const createVNPayPayment = async (req: AuthRequest, res: Response): Promi
             bookingCode,
             paymentStatus: "pending",
         });
-        // Tạo URL thanh toán
-        const ipAddr =
-            (req.headers["x-forwarded-for"] as string) || req.socket.remoteAddress || "";
+
+        const ipAddr = (req.headers["x-forwarded-for"] as string) || req.socket.remoteAddress || "";
         const paymentUrl = buildVNPayUrl(booking.bookingCode, booking.totalPrice, ipAddr);
         res.status(200).json({ paymentUrl, booking });
     } catch (error) {
@@ -62,7 +59,8 @@ export const createVNPayPayment = async (req: AuthRequest, res: Response): Promi
         res.status(500).json({ message: "Lỗi VNPay", error });
     }
 };
-//🔁 Callback từ VNPay sau khi thanh toán
+
+/** 🔁 Callback từ VNPay */
 export const vnpayReturn = async (req: AuthRequest, res: Response): Promise<void> => {
     try {
         const isValid = verifyVNPay(req.query as Record<string, string>);
@@ -75,12 +73,11 @@ export const vnpayReturn = async (req: AuthRequest, res: Response): Promise<void
 
         if (!booking) {
             res.status(404).json({ message: "Không tìm thấy vé" });
-            return;
+            return
         }
-
         if (!isValid) {
             res.status(400).json({ message: "Sai chữ ký VNPay" });
-            return;
+            return
         }
 
         if (req.query["vnp_ResponseCode"] === "00") {
@@ -114,15 +111,14 @@ export const vnpayReturn = async (req: AuthRequest, res: Response): Promise<void
         res.status(500).json({ message: "Lỗi callback VNPay", err });
     }
 };
-/**
- * 📜 Lấy danh sách vé của người dùng
- */
+
+/** 📜 Lấy danh sách vé của người dùng */
 export const getMyBookings = async (req: AuthRequest, res: Response): Promise<void> => {
     try {
         const userId = req.user?.id;
         if (!userId) {
             res.status(401).json({ message: "Chưa đăng nhập" });
-            return;
+            return
         }
 
         const bookings = await Booking.find({ userId })
@@ -137,4 +133,3 @@ export const getMyBookings = async (req: AuthRequest, res: Response): Promise<vo
         res.status(500).json({ message: "Lỗi khi lấy vé của người dùng", error });
     }
 };
-
