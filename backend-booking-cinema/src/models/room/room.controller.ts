@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { Room } from "../room/room.model";
 import { createRoomSchema, updateRoomSchema } from "../../utils/room/room.validator";
+import { ISeat } from "./room.type";
 /** Lấy tất cả phòng */
 export const getAllRooms = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -12,95 +13,102 @@ export const getAllRooms = async (req: Request, res: Response): Promise<void> =>
 };
 /** Tạo phòng */
 export const createRoom = async (req: Request, res: Response): Promise<void> => {
-    try {
-        const { name, type } = req.body;
-        if (!name || !type) {
-            res.status(400).json({ message: "Thiếu thông tin phòng" });
-            return;
-        }
-
-        // ⚙️ Cấu hình
-        const rows = 10; // A → J
-        const seatsPerRow = 16;
-        const alphabet = "ABCDEFGHIJ";
-        const seats = [];
-
-        // 🎥 Giá cơ sở cho từng loại phòng
-        const BASE_PRICE = {
-            "2D": 80000,
-            "3D": 100000,
-            "IMAX": 130000,
-        };
-        // 🎟️ Hệ số nhân cho từng loại ghế
-        const MULTIPLIER = {
-            Normal: 1.0,
-            VIP: 1.3,
-            Double: 1.2,
-            Triple: 1.5,
-        };
-
-        // 🎯 Phân bổ ghế theo quy tắc
-        for (let r = 0; r < rows; r++) {
-            const rowLetter = alphabet[r];
-
-            for (let c = 1; c <= seatsPerRow; c++) {
-                const seatNumber = `${rowLetter}${c}`;
-                let seatType: "Normal" | "VIP" | "Double" | "Triple" = "Normal";
-
-                // 🎬 Giữa phòng là ghế VIP
-                if (["D", "E", "F"].includes(rowLetter)) {
-                    seatType = "VIP";
-                }
-
-                // 🎬 Hàng I → 3 cụm ghế đôi (mỗi cụm 2 ghế)
-                else if (rowLetter === "I") {
-                    // Cụm 1: 3-4 | Cụm 2: 7-8 | Cụm 3: 12-13
-                    if (
-                        (c >= 3 && c <= 4) ||
-                        (c >= 7 && c <= 8) ||
-                        (c >= 12 && c <= 13)
-                    ) {
-                        seatType = "Double";
-                    }
-                }
-
-                // 🎬 Hàng J → 2 cụm ghế ba (mỗi cụm 3 ghế)
-                else if (rowLetter === "J") {
-                    // Cụm 1: 4-6 | Cụm 2: 10-12
-                    if ((c >= 4 && c <= 6) || (c >= 10 && c <= 12)) {
-                        seatType = "Triple";
-                    }
-                }
-
-                // 💰 Tính giá
-                const basePrice = BASE_PRICE[type as keyof typeof BASE_PRICE] || 80000;
-                const finalPrice = Math.round((basePrice * MULTIPLIER[seatType]) / 1000) * 1000;
-                // 🪑 Tạo ghế
-                seats.push({
-                    seatNumber,
-                    type: seatType,
-                    price: finalPrice,
-                    isBooked: false,
-                });
-            }
-        }
-
-        // 🏠 Tạo phòng
-        const room = await Room.create({
-            name,
-            type,
-            totalSeats: seats.length,
-            seats,
-        });
-
-        res.status(201).json({
-            message: "✅ Tạo phòng và ghế mặc định thành công",
-            room,
-        });
-    } catch (error) {
-        console.error("❌ Lỗi tạo phòng:", error);
-        res.status(500).json({ message: "Lỗi server khi tạo phòng", error });
+  try {
+    const { name, type } = req.body;
+    // 🧩 Kiểm tra đầu vào
+    if (!name || !type) {
+      res.status(400).json({ message: "Thiếu thông tin phòng (name, type)" });
+      return;
     }
+    // 🔠 Chuẩn hóa type (phòng)
+    const typeKey = (type as string).toUpperCase() as "2D" | "3D" | "IMAX";
+    // ⚙️ Cấu hình cố định
+    const rows = 10; // A → J
+    const seatsPerRow = 16;
+    const alphabet = "ABCDEFGHIJ";
+    // 💰 Giá cơ sở cho từng loại phòng
+    const BASE_PRICE = {
+      "2D": 80000,
+      "3D": 100000,
+      "IMAX": 130000,
+    };
+    // 🎟️ Hệ số nhân cho từng loại ghế
+    const MULTIPLIER = {
+      Normal: 1.0,
+      VIP: 1.3,
+      Double: 1.2,
+      Triple: 1.5,
+    };
+
+    // ✅ Lấy giá cơ sở đúng type, fallback nếu type sai
+    const basePrice = BASE_PRICE[typeKey] || 80000;
+
+    const seats: ISeat[] = [];
+
+    // 🪑 Sinh ghế theo quy tắc
+    for (let r = 0; r < rows; r++) {
+      const rowLetter = alphabet[r];
+
+      for (let c = 1; c <= seatsPerRow; c++) {
+        const seatNumber = `${rowLetter}${c}`;
+        let seatType: "Normal" | "VIP" | "Double" | "Triple" = "Normal";
+
+        // 🎬 Ghế VIP ở giữa (D–F)
+        if (["D", "E", "F"].includes(rowLetter)) {
+          seatType = "VIP";
+        }
+
+        // 🎬 Hàng I → ghế đôi
+        else if (rowLetter === "I") {
+          if (
+            (c >= 3 && c <= 4) ||
+            (c >= 7 && c <= 8) ||
+            (c >= 12 && c <= 13)
+          ) {
+            seatType = "Double";
+          }
+        }
+
+        // 🎬 Hàng J → ghế ba
+        else if (rowLetter === "J") {
+          if ((c >= 4 && c <= 6) || (c >= 10 && c <= 12)) {
+            seatType = "Triple";
+          }
+        }
+
+        // 💰 Tính giá chính xác (không chia 1000)
+        const finalPrice = Math.round(basePrice * MULTIPLIER[seatType]);
+
+        // 🪑 Push vào danh sách ghế
+        seats.push({
+          seatNumber,
+          type: seatType,
+          price: finalPrice,
+          isBooked: false,
+        });
+      }
+    }
+
+    // 🏗️ Tạo phòng trong DB
+    const room = await Room.create({
+      name,
+      type: typeKey,
+      totalSeats: seats.length,
+      seats,
+    });
+
+    console.log(`✅ Phòng ${name} (${typeKey}) tạo thành công!`);
+    console.log(`💰 Base Price: ${basePrice.toLocaleString()}đ`);
+    console.log(`🪑 Tổng ghế: ${seats.length}`);
+
+    res.status(201).json({
+      message: "✅ Tạo phòng và ghế mặc định thành công",
+      room,
+    });
+  } catch (error) {
+    console.error("❌ Lỗi tạo phòng:", error);
+    res.status(500).json({ message: "Lỗi server khi tạo phòng", error });
+  }
 };
 
 /** Cập nhật phòng */

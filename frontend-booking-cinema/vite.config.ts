@@ -7,4 +7,13 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  optimizeDeps: {
+    include: [
+      'three',
+      '@react-three/fiber',
+      '@react-three/drei',
+      'gsap'
+    ],
+    force: true, // ⚡ ép Vite rebuild deps mỗi lần
+  },
 })

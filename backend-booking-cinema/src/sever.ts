@@ -17,7 +17,7 @@ import roomRouter from "./models/room/room.routes";
 import cronRouter from "./cron/admin.cron.router";
 import promotionRouter from "./models/promotion/promotion.router"
 import reviewRouter from "./models/reviews/review.router";
-// import bookingRouter from "./models/bookings/booking.router";
+import bookingRouter from "./models/bookings/booking.router";
 const app: Application = express();
 app.use(cors({
   origin: ENV.FRONTEND_URL,
@@ -38,7 +38,7 @@ app.use("/api/showtimes", showtimeRouter);// CRUD suất chiếu
 app.use("/api/rooms", roomRouter);// CRUD phòng chiếu
 app.use("/api/promotions", promotionRouter);
 app.use("/api/reviews", reviewRouter);
-// app.use("/api/bookings", bookingRouter);
+app.use("/api/bookings", bookingRouter);
 connectMongoDB();
 // ✅ Tạo HTTP server để gắn Socket.IO
 const server = http.createServer(app);

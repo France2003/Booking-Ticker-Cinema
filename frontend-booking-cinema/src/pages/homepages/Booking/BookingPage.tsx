@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import "dayjs/locale/vi";
 import { toast } from "react-toastify";
-import { getSeatsByShowtime } from "../../../services/booking/booking";
+import { getSeatsByShowtime, createVNPayPayment } from "../../../services/booking/booking";
 import UserSeatMap from "./UserSeatMap";
-
+import type { IShowtime, ISeat } from "../../../types/bookings/booking";
 dayjs.locale("vi");
-
 export default function BookingPage() {
     const { id } = useParams();
-    const [showtime, setShowtime] = useState<any>(null);
+    const [showtime, setShowtime] = useState<IShowtime | null>(null);
     const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
     const [loading, setLoading] = useState(false);
 
@@ -18,7 +17,8 @@ export default function BookingPage() {
     useEffect(() => {
         (async () => {
             try {
-                const data = await getSeatsByShowtime(id!);
+                if (!id) return;
+                const data = await getSeatsByShowtime(id);
                 setShowtime(data);
             } catch (err) {
                 toast.error("Không thể tải dữ liệu suất chiếu.");
@@ -34,14 +34,14 @@ export default function BookingPage() {
             </div>
         );
 
-    const seats = showtime.roomId?.seats || [];
+    const seats: ISeat[] = showtime.seats || [];
 
     // ✅ Tính tổng tiền
     const total = seats
-        .filter((s: any) => selectedSeats.includes(s.seatNumber))
-        .reduce((sum: number, s: any) => sum + s.price, 0);
+        .filter((s) => selectedSeats.includes(s.seatNumber))
+        .reduce((sum, s) => sum + s.price, 0);
 
-    // ✅ Handler đặt vé (có thể bật lại sau)
+    // ✅ Xử lý đặt vé & thanh toán VNPay
     const handleBooking = async () => {
         if (!selectedSeats.length) {
             toast.warn("Vui lòng chọn ít nhất 1 ghế trước khi đặt vé!");
@@ -50,14 +50,14 @@ export default function BookingPage() {
 
         try {
             setLoading(true);
-            // const res = await createBooking(id!, selectedSeats);
-            // toast.success(`🎟️ Đặt vé thành công! Mã: ${res.booking.bookingCode}`);
-            // const updated = await getSeatsByShowtime(id!);
-            // setShowtime(updated);
-            // setSelectedSeats([]);
-            toast.success("🎟️ (Demo) Đặt vé thành công!");
+            // 🔥 Gọi API tạo thanh toán VNPay
+            const paymentUrl = await createVNPayPayment(id!, selectedSeats);
+            toast.info("🔗 Đang chuyển hướng đến VNPay...");
+            // ✅ Chuyển hướng sang VNPay
+            window.location.href = paymentUrl;
         } catch (err: any) {
-            toast.error("Lỗi khi đặt vé!");
+            console.error(err);
+            toast.error("❌ Lỗi khi tạo thanh toán!");
         } finally {
             setLoading(false);
         }
@@ -85,17 +85,25 @@ export default function BookingPage() {
                     />
                     <div className="flex flex-col justify-between">
                         <div>
-                            <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-1">
+                            <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-1 flex items-center gap-2">
+                                {showtime.movieId?.isHot && (
+                                    <span className="text-red-500 text-xl" title="Phim hot 🔥">
+                                        🔥
+                                    </span>
+                                )}
                                 {showtime.movieId?.tieuDe}
                             </h2>
-                            <p className="text-gray-600 text-sm">
-                                {dayjs(showtime.date).format("DD/MM/YYYY")} –{" "}
-                                {dayjs(showtime.startTime).format("HH:mm")}
+                            <p className="text-sm md:text-base text-gray-800">
+                                {dayjs(showtime.date).format("DD/MM/YYYY")}
                             </p>
-                            <p className="text-sm">
+                            <p className="text-sm md:text-base text-gray-800">
+                                {dayjs(showtime.startTime).format("HH:mm")} →{" "}
+                                {dayjs(showtime.endTime).format("HH:mm")}
+                            </p>
+                            <p className="text-sm md:text-base text-gray-800">
                                 Thời lượng: {showtime.movieId?.thoiLuong} phút
                             </p>
-                            <p className="text-sm">
+                            <p className="text-sm md:text-base text-gray-800">
                                 Phòng:{" "}
                                 <span className="font-semibold text-gray-800">
                                     {showtime.roomId?.name}
@@ -112,9 +120,7 @@ export default function BookingPage() {
                 <div className="space-y-2 text-sm text-gray-700">
                     <p>
                         <b>Ghế:</b>{" "}
-                        {selectedSeats.length > 0
-                            ? selectedSeats.join(", ")
-                            : "Chưa chọn"}
+                        {selectedSeats.length > 0 ? selectedSeats.join(", ") : "Chưa chọn"}
                     </p>
                     <p>
                         <b>Số vé:</b> {selectedSeats.length}
@@ -122,7 +128,7 @@ export default function BookingPage() {
                     <p>
                         <b>Tổng tiền:</b>{" "}
                         <span className="text-lg font-semibold text-orange-600">
-                            {total.toLocaleString("vi-VN")}₫
+                            {total.toLocaleString("vi-VN")} VNĐ
                         </span>
                     </p>
                 </div>
@@ -132,8 +138,8 @@ export default function BookingPage() {
                     onClick={handleBooking}
                     disabled={!selectedSeats.length || loading}
                     className={`w-full py-3 rounded-xl text-white font-semibold transition-all shadow-md ${!selectedSeats.length || loading
-                        ? "bg-gray-400 cursor-not-allowed"
-                        : "bg-orange-500 hover:bg-orange-600"
+                            ? "bg-gray-400 cursor-not-allowed"
+                            : "bg-orange-500 hover:bg-orange-600"
                         }`}
                 >
                     {loading ? "⏳ Đang xử lý..." : "🎟️ Xác nhận đặt vé"}

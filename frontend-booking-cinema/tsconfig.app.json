@@ -6,6 +6,10 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": [
+      "@react-three/fiber",
+      "three"
+    ],
 
     /* Bundler mode */
     "moduleResolution": "bundler",

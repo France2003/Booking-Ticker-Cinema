@@ -62,7 +62,7 @@ const UserTable: React.FC<UserTableProps> = ({
                                 <td className="p-3 font-medium">{user.fullname}</td>
                                 <td className="p-3">{user.email}</td>
                                 <td className="p-3">{user.phone}</td>
-                                <td className="p-3 hidden sm:table-cell">{user.gioiTinh || "Không xác định"}</td>
+                                <td className="p-3 hidden sm:table-cell">{user.gender || "Không xác định"}</td>
                                 <td className="p-3 hidden md:table-cell">
                                     {formatDate(user.createdAt)}
                                 </td>

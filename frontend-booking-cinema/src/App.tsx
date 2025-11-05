@@ -24,6 +24,8 @@ import MovieDetailPage from './pages/homepages/MoviePage/MovieDetailPage'
 import QuanLyBinhLuan from './pages/adminpages/QuanLyBinhLuan/QuanLyBinhLuan'
 import ShowTimesPage from './pages/homepages/ShowTimes/ShowTimes'
 import BookingPage from './pages/homepages/Booking/BookingPage'
+import PaymentResultPage from './pages/homepages/Booking/PaymentResultPage'
+import MyTicketsPage from './pages/homepages/Booking/MyTicketsPage'
 function App() {
 
   return (
@@ -56,6 +58,8 @@ function App() {
           <Route path="/movies/:id" element={<MovieDetailPage />} />
           <Route path="/lich-chieu" element={<ShowTimesPage />} />
            <Route path="/booking/:id" element={<BookingPage />} />
+           <Route path="/payment-result" element={<PaymentResultPage />} />
+           <Route path="/user/my-tickets" element={<MyTicketsPage />} />
         </Route>
         <Route path="/dashboard" element={<DashboardHome />} />
         <Route path="/quan-ly-phim" element={<QuanLyPhim />} />

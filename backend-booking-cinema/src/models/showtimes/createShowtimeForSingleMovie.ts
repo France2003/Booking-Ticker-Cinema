@@ -26,18 +26,20 @@ export const createShowtimeForSingleMovie = async (movie: any): Promise<void> =>
                 type: "2D",
                 seats: Array.from({ length: 50 }, (_, i) => ({
                     seatNumber: `A${i + 1}`,
-                    type: "normal",
+                    type: "Normal",
                     price: 80000,
                 })),
             });
             rooms = [defaultRoom];
         }
 
+        // --- Xử lý mốc ngày chiếu ---
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
         const releaseDate = movie.ngayKhoiChieu ? new Date(movie.ngayKhoiChieu) : today;
         releaseDate.setHours(0, 0, 0, 0);
+
         const startDate = releaseDate > today ? releaseDate : today;
 
         const sunday = new Date(today);
@@ -53,6 +55,7 @@ export const createShowtimeForSingleMovie = async (movie: any): Promise<void> =>
             return;
         }
 
+        // --- Cấu hình phim ---
         const isHot = isHotMovie(movie);
         const maxPerDay = isHot ? 8 : 6;
         const movieTitle = `${isHot ? "🔥" : ""} ${movie.tieuDe}`;
@@ -60,6 +63,7 @@ export const createShowtimeForSingleMovie = async (movie: any): Promise<void> =>
 
         let totalCreated = 0;
 
+        // --- Tạo suất chiếu ---
         for (let d = new Date(startDate); d <= sunday; d.setDate(d.getDate() + 1)) {
             const date = new Date(d);
             const weekday = date.getDay();
@@ -68,10 +72,8 @@ export const createShowtimeForSingleMovie = async (movie: any): Promise<void> =>
             const timeSlots = getTimeSlotsForDay(weekday);
             if (!timeSlots.length) continue;
 
-            // 🎲 Random số phòng chiếu hôm nay cho phim này
-            const roomCountToday = Math.floor(
-                Math.random() * (isHot ? 3 : 2) + (isHot ? 3 : 2) // hot: 3–5 phòng, thường: 2–4 phòng
-            );
+            // Random số phòng chiếu cho ngày này
+            const roomCountToday = Math.floor(Math.random() * (isHot ? 3 : 2) + (isHot ? 3 : 2)); // hot: 3–5 phòng, thường: 2–4 phòng
             const randomRooms = [...rooms].sort(() => Math.random() - 0.5).slice(0, roomCountToday);
 
             logShowtime(
@@ -94,7 +96,7 @@ export const createShowtimeForSingleMovie = async (movie: any): Promise<void> =>
                     const endTime = new Date(startTime.getTime() + (duration + 15) * 60000);
                     if (endTime.getHours() >= 24) continue;
 
-                    // giờ vàng: hot ưu tiên, thường giảm tần suất
+                    // Nếu là phim thường thì giảm xác suất suất chiếu trong giờ vàng
                     if (hour >= 18 && hour <= 22 && !isHot && Math.random() < 0.3) continue;
 
                     const conflict = await isShowtimeConflict(
@@ -106,23 +108,38 @@ export const createShowtimeForSingleMovie = async (movie: any): Promise<void> =>
                     );
                     if (conflict) continue;
 
+                    // --- ✅ Tính giá vé động theo loại phòng, giờ và độ hot --
+                    // --- ✅ Tính giá từng ghế theo loại ---
+                    const SEAT_MULTIPLIER = {
+                        normal: 1.0,
+                        vip: 1.3,
+                        double: 1.2,
+                        triple: 1.5,
+                    };
+
                     const basePrice = BASE_PRICE[room.type as keyof typeof BASE_PRICE] || 80000;
-                    const price = getDynamicPrice(basePrice, hour, isHot);
+                    const dynamicPrice = getDynamicPrice(basePrice, hour, isHot);
 
-                    const bookedSeats = room.seats.map((s) => ({
-                        seatNumber: s.seatNumber,
-                        isBooked: false,
-                        type: s.type,
-                        price: s.price,
-                    }));
+                    const bookedSeats = room.seats.map((s) => {
+                        const seatType = s.type.toLowerCase();
+                        const seatMultiplier = SEAT_MULTIPLIER[seatType as keyof typeof SEAT_MULTIPLIER] || 1;
+                        const finalSeatPrice = Math.round((dynamicPrice * seatMultiplier) / 1000) * 1000;
 
+                        return {
+                            seatNumber: s.seatNumber,
+                            isBooked: false,
+                            type: s.type,
+                            price: finalSeatPrice,
+                        };
+                    });
+                    // --- Lưu vào database ---
                     await Showtime.create({
                         movieId: movie._id,
                         roomId: room._id,
                         date,
                         startTime,
                         endTime,
-                        price,
+                        price: dynamicPrice,
                         bookedSeats,
                     });
 
@@ -138,7 +155,7 @@ export const createShowtimeForSingleMovie = async (movie: any): Promise<void> =>
                             hour12: false,
                             hour: "2-digit",
                             minute: "2-digit",
-                        })} | 💰 ${price.toLocaleString("vi-VN")}đ`
+                        })} | 💰 ${dynamicPrice.toLocaleString("vi-VN")}đ`
                     );
                 }
 
@@ -154,3 +171,4 @@ export const createShowtimeForSingleMovie = async (movie: any): Promise<void> =>
         logUnknownError(err, `createShowtimeForSingleMovie(${movie?.tieuDe || "unknown"})`);
     }
 };
+

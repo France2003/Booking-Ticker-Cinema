@@ -10,11 +10,11 @@ dayjs.locale("vi");
 
 const ShowTimesPage = () => {
   const [showtimes, setShowtimes] = useState<Showtime[]>([]);
-  const [selectedDate, setSelectedDate] = useState<string>(
-    dayjs().format("YYYY-MM-DD")
-  );
-  const navigate = useNavigate(); // ✅ Dùng để điều hướng đến trang booking
+  const [selectedDate, setSelectedDate] = useState<string>(dayjs().format("YYYY-MM-DD"));
+  const [selectedTimeRange, setSelectedTimeRange] = useState<string>("all");
+  const navigate = useNavigate();
 
+  // --- Lấy dữ liệu suất chiếu ---
   useEffect(() => {
     (async () => {
       const data = await getAllShowTimes();
@@ -22,7 +22,7 @@ const ShowTimesPage = () => {
     })();
   }, []);
 
-  // ✅ Danh sách 7 ngày kế tiếp
+  // --- 7 ngày kế tiếp ---
   const weekDays = Array.from({ length: 7 }).map((_, i) => {
     const d = dayjs().add(i, "day");
     return {
@@ -32,12 +32,26 @@ const ShowTimesPage = () => {
     };
   });
 
-  // ✅ Lọc suất chiếu theo ngày
-  const filtered = showtimes.filter((s) =>
-    dayjs(s.date).isSame(selectedDate, "day")
-  );
+  // --- Các khung giờ ---
+  const timeRanges = [
+    { label: "Tất cả", value: "all", start: 0, end: 24 },
+    { label: "Sáng (06:00 - 12:00)", value: "morning", start: 6, end: 12 },
+    { label: "Chiều (12:00 - 18:00)", value: "afternoon", start: 12, end: 18 },
+    { label: "Tối (18:00 - 24:00)", value: "evening", start: 18, end: 24 },
+  ];
 
-  // ✅ Nhóm suất chiếu theo phim
+  // --- Lọc theo ngày và khung giờ ---
+  const filtered = showtimes.filter((s) => {
+    const sameDay = dayjs(s.date).isSame(selectedDate, "day");
+    if (!sameDay) return false;
+
+    if (selectedTimeRange === "all") return true;
+    const range = timeRanges.find((r) => r.value === selectedTimeRange);
+    const hour = dayjs(s.startTime).hour();
+    return hour >= (range?.start || 0) && hour < (range?.end || 24);
+  });
+
+  // --- Nhóm phim ---
   const groupedMovies = filtered.reduce((acc: any, curr: Showtime) => {
     const id = curr.movieId._id;
     if (!acc[id]) acc[id] = { ...curr.movieId, showtimes: [] };
@@ -45,26 +59,25 @@ const ShowTimesPage = () => {
     return acc;
   }, {});
 
-  // ✅ Tháng hiện tại
+  // --- Tháng hiện tại ---
   const currentMonth = dayjs(selectedDate)
     .format("MMMM")
-    .replace(/^t/, "T")
     .replace(/^(\w)/, (m) => m.toUpperCase());
 
-  // ✅ Xác định giờ cao điểm
+  // --- Giờ cao điểm ---
   const isPeakHour = (startTime: string) => {
     const hour = dayjs(startTime).hour();
     return hour >= 18 && hour < 22;
   };
 
-  // ✅ Khi click vào suất chiếu → chuyển đến trang booking
+  // --- Điều hướng ---
   const handleSelectShowtime = (showtimeId: string) => {
     navigate(`/booking/${showtimeId}`);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 p-6">
-      {/* --- Header --- */}
+      {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -84,13 +97,11 @@ const ShowTimesPage = () => {
             {currentMonth}
           </span>
         </div>
-        <p className="text-gray-600 mt-2 text-md">
-          Chọn ngày để xem các phim đang chiếu
-        </p>
+        <p className="text-gray-600 mt-2 text-md">Chọn ngày & khung giờ để xem phim</p>
       </motion.div>
 
-      {/* --- Ngày chiếu --- */}
-      <div className="flex justify-center gap-3 bg-white p-4 rounded-2xl shadow-md mb-10 border border-gray-200 overflow-x-auto">
+      {/* --- Chọn ngày --- */}
+      <div className="flex justify-center gap-3 bg-white p-4 rounded-2xl shadow-md border border-gray-200 overflow-x-auto">
         {weekDays.map((d) => (
           <motion.button
             key={d.date}
@@ -108,10 +119,32 @@ const ShowTimesPage = () => {
         ))}
       </div>
 
-      {/* --- Danh sách phim theo ngày --- */}
+      {/* --- Chọn khung giờ (nằm dưới, góc phải) --- */}
+      <div className="flex justify-end mt-4 mb-10 max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="w-full sm:w-auto"
+        >
+          <select
+            value={selectedTimeRange}
+            onChange={(e) => setSelectedTimeRange(e.target.value)}
+            className="border border-gray-300 rounded-lg px-4 py-2 text-gray-700 shadow-sm hover:border-orange-400 focus:ring-2 focus:ring-orange-300 transition w-full sm:w-64"
+          >
+            {timeRanges.map((t) => (
+              <option key={t.value} value={t.value}>
+                {t.label}
+              </option>
+            ))}
+          </select>
+        </motion.div>
+      </div>
+
+      {/* --- Danh sách phim --- */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={selectedDate}
+          key={`${selectedDate}-${selectedTimeRange}`}
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -15 }}
@@ -127,7 +160,7 @@ const ShowTimesPage = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition-all bg-white overflow-hidden flex flex-col sm:flex-row"
               >
-                {/* --- Poster --- */}
+                {/* Poster */}
                 <div className="relative sm:w-1/4 w-full">
                   <img
                     src={`http://localhost:3001${movie.anhPoster}`}
@@ -136,7 +169,7 @@ const ShowTimesPage = () => {
                   />
                 </div>
 
-                {/* --- Thông tin & suất chiếu --- */}
+                {/* Info */}
                 <div className="flex-1 p-6">
                   <h3 className="text-2xl font-bold mb-4 text-gray-800 uppercase border-l-4 border-orange-500 pl-3 flex items-center gap-2">
                     {movie.tieuDe}
@@ -146,17 +179,14 @@ const ShowTimesPage = () => {
                   </h3>
 
                   {/* Suất chiếu */}
-                  <motion.div
-                    layout
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"
-                  >
+                  <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                     {movie.showtimes.map((st: Showtime, i: number) => (
                       <motion.button
                         key={st._id}
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: i * 0.05 }}
-                        onClick={() => handleSelectShowtime(st._id)} // ✅ điều hướng đến Booking
+                        onClick={() => handleSelectShowtime(st._id)}
                         className={`rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-center shadow-sm border cursor-pointer transition-all duration-200 
                           ${isPeakHour(st.startTime)
                             ? "bg-orange-50 border-orange-300 hover:bg-orange-100"
@@ -164,8 +194,7 @@ const ShowTimesPage = () => {
                           }`}
                       >
                         <p className="font-semibold text-sm sm:text-base text-gray-800">
-                          {dayjs(st.startTime).format("HH:mm")} -{" "}
-                          {dayjs(st.endTime).format("HH:mm")}
+                          {dayjs(st.startTime).format("HH:mm")} - {dayjs(st.endTime).format("HH:mm")}
                         </p>
                         <p className="text-xs sm:text-sm text-gray-600 mt-0.5">
                           Phòng: <span className="font-medium">{st.roomId.name}</span>
@@ -197,7 +226,7 @@ const ShowTimesPage = () => {
               transition={{ duration: 0.4 }}
               className="text-center text-gray-600 text-lg font-medium py-12 bg-gray-50 rounded-xl shadow-inner"
             >
-              ❌ Không có xuất chiếu cho ngày hôm nay
+              ❌ Không có suất chiếu cho ngày & khung giờ này
             </motion.div>
           )}
         </motion.div>

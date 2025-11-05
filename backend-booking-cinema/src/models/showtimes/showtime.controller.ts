@@ -136,22 +136,31 @@ export const deleteAllShowtimes = async (req: Request, res: Response): Promise<v
     }
 };
 //trả về sơ đồ ghế theo suất chiếu.
-export const getShowtimeSeats = async (req: Request, res: Response) => {
-  try {
-    const showtime = await Showtime.findById(req.params.id)
-      .populate("movieId", "tieuDe anhPoster thoiLuong")
-      .populate("roomId", "name type seats");
+export const getShowtimeSeats = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const showtime = await Showtime.findById(req.params.id)
+            .populate("movieId", "tieuDe anhPoster thoiLuong isHot")
+            .populate("roomId", "name type");
 
-    if (!showtime) {
-      res.status(404).json({ message: "Không tìm thấy suất chiếu" });
-      return;
+        if (!showtime) {
+            res.status(404).json({ message: "Không tìm thấy suất chiếu" });
+            return
+        }
+
+        res.status(200).json({
+            message: "Lấy thông tin ghế thành công",
+            showtime: {
+                _id: showtime._id,
+                date: showtime.date,
+                startTime: showtime.startTime,
+                endTime: showtime.endTime,
+                price: showtime.price,
+                movieId: showtime.movieId,
+                roomId: showtime.roomId,
+                seats: showtime.bookedSeats, // ✅ dùng ghế thật có giá động
+            },
+        });
+    } catch (error: any) {
+        res.status(500).json({ message: "Lỗi máy chủ", error: error.message });
     }
-
-    res.status(200).json({
-      message: "Lấy thông tin ghế thành công",
-      showtime,
-    });
-  } catch (error: any) {
-    res.status(500).json({ message: "Lỗi máy chủ", error: error.message });
-  }
 };

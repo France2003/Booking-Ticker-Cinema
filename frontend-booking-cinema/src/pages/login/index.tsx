@@ -11,7 +11,7 @@ import { useUser } from "../../contexts/UserContext";
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState<"user" | "admin">("user");
+    const [role] = useState<"user" | "admin">("user"); //setRole
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const { login } = useUser();
@@ -21,7 +21,6 @@ function Login() {
         try {
             const loginFn = role === "admin" ? loginAdmin : loginUser;
             const data = await loginFn({ email, password });
-
             console.log(`[${role.toUpperCase()} LOGIN] API Response:`, data);
             await login(data.token);
             if (data.user.role === "admin") {
