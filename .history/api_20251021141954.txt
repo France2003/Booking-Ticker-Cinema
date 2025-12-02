@@ -1,0 +1,23 @@
+Cổng: http://localhost:3001/
+I. Auth (Post)
+    1. Đăng ký (Post): http://localhost:3001/api/auth/register
+    2. Đăng Nhập (Post):  http://localhost:3001/api/auth/register
+    3. Đăng nhập Admin:  http://localhost:3001/api/auth/admin/login
+    4. Quên mật khẩu:  http://localhost:3001/api/auth/forgot-password
+    5. Đặt lại mật khẩu:  http://localhost:3001/api/auth/reset-password/${token}`, { password }
+    6. refreshToken: http://localhost:3001/api/auth/refresh-token
+II. Movies 
+    1. Thêm phim (Post): http://localhost:3001/api/movies
+    2. Lấy danh sách phim (Get): http://localhost:3001/api/movies
+    3. Cập nhật (Put): http://localhost:3001/api/movies
+    4. Xóa phim (Delete): http://localhost:3001/api/movies/${id}
+    5. Uploads Poster và Trailler (Post): http://localhost:3001/api/uploads
+III. Quản lý người dùng
+    1. Lấy danh sách phim (Get): http://localhost:3001/api/users
+    2. Chi tiết người dùng (Get): http://localhost:3001/api/users/${id}
+    3. Xóa người dùng (Delete): http://localhost:3001/api/users/${id}
+    4. Trạng thái tài khoản (Patch): http://localhost:3001/api/users/${id}/status
+IV. Profile
+    1. Lấy trang profile (Get): http://localhost:3001/api/users/me/profile
+    2. Sửa profile (Put): http://localhost:3001/api/users/me/profile
+V. 

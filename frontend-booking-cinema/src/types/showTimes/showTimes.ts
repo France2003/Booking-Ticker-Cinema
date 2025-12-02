@@ -16,4 +16,10 @@ export interface Showtime {
     startTime: string;
     endTime: string;
     price: number;
+    bookedSeats?: {
+        seatNumber: string;
+        type: string;
+        price: number;
+        isBooked: boolean;
+    }[];
 }

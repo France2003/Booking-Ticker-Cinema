@@ -34,3 +34,4 @@ export const deleteUser = async (req: Request, res: Response): Promise<void> => 
     await UserModel.findByIdAndDelete(req.params.id);
     res.json({ message: "Xóa người dùng thành công" });
 };
+

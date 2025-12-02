@@ -12,7 +12,6 @@ export const getShowtimesByMovie = async (movieId: string): Promise<Showtime[]> 
     const res = await api.get(`/api/showtimes/movie/${movieId}`);
     return res.data.data;
 };
-
 /** 🗓️ Lấy suất chiếu theo phim + ngày cụ thể */
 export const getShowtimesByMovieAndDate = async (
     movieId: string,
@@ -21,3 +20,4 @@ export const getShowtimesByMovieAndDate = async (
     const res = await api.get(`/api/showtimes/movie/${movieId}?date=${date}`);
     return res.data.data;
 };
+

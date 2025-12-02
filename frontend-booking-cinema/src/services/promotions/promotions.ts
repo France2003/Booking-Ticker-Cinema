@@ -20,3 +20,7 @@ export const deletePromotion = async (id: string) => {
     const res = await api.delete(`/api/promotions/${id}`);
     return res.data;
 }
+export const checkPromotionCode = async (maCode: string) => {
+  const res = await api.post(`/api/promotions/check`, { maCode });
+  return res.data.data;
+};

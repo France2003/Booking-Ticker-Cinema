@@ -1,8 +1,13 @@
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import MapSection from "./MapSection"
+import { Helmet } from "react-helmet"
 export default function ContactPage() {
     return (
         <div className="bg-[#F5F5EF] min-h-screen pt-16 pb-20">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Liên hệ</title>
+            </Helmet>
             <div className="max-w-[1200px] mx-auto px-4 md:px-10">
                 {/* Header */}
                 <h1 className="text-3xl md:text-4xl font-extrabold text-[#0B1633] mb-10 uppercase text-center">

@@ -146,7 +146,7 @@ export default function NowShowingMovies() {
     return (
         <section className="w-full -mt-[35px] py-10">
             <h2 className="text-center text-3xl font-extrabold uppercase mb-6 text-orange-600 tracking-wider drop-shadow-md">
-                🎬 Phim Đang Chiếu
+                🎬 Phim Đang Công Chiếu
             </h2>
             <div className="relative">
                 <div ref={sliderRef} className="flex gap-4 sm:gap-5 overflow-x-hidden no-scrollbar select-none px-2 py-2 cursor-grab">
@@ -154,7 +154,6 @@ export default function NowShowingMovies() {
                         const trailerUrl = movie.Trailer
                             ? `http://localhost:3001${movie.Trailer}`
                             : "https://www.youtube.com/embed/dQw4w9WgXcQ"
-
                         const color =
                             movie.danhGia < 10
                                 ? "text-green-400"
@@ -163,7 +162,6 @@ export default function NowShowingMovies() {
                                     : movie.danhGia < 18
                                         ? "text-orange-400"
                                         : "text-red-500"
-
                         return (
                             <motion.div
                                 key={movie._id || index}

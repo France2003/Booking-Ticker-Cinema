@@ -43,9 +43,8 @@ function Login() {
     return (
         <div className="login min-h-screen flex items-center justify-center bg-gray-900 text-black">
             <Helmet>
-                <title>Đăng Nhập | Booking Cinema</title>
+                <title>Đăng Nhập | France Cinema</title>
             </Helmet>
-
             <AuthLayout rightBgUrl={ImgBackground}>
                 <AuthForm
                     type="login"

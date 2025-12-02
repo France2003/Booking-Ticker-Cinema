@@ -34,7 +34,7 @@ function Register() {
   return (
     <div className="register min-h-screen flex items-center justify-center bg-gray-900 text-black">
       <Helmet>
-        <title>Đăng Ký | Booking Cinema</title>
+        <title>Đăng Ký | France Cinema</title>
       </Helmet>
       <AuthLayout rightBgUrl={ImgBackground}>
         <AuthForm

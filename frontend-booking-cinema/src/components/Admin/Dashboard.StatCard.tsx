@@ -1,7 +1,7 @@
 type StatCardProps = {
   title: string;
-  value: string;
-  change: string;
+  value: number | string;
+  change?: string;
   positive?: boolean;
   icon?: React.ReactNode;
 };

@@ -3,6 +3,7 @@ export interface ISeat {
     type: "Normal"| "VIP"| "Double"|"Triple"
     price: number;
     isBooked?: boolean;
+    isHold?: boolean;
 }
 export interface IRoom {
     _id: string;

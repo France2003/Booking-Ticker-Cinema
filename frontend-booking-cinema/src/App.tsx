@@ -24,8 +24,12 @@ import MovieDetailPage from './pages/homepages/MoviePage/MovieDetailPage'
 import QuanLyBinhLuan from './pages/adminpages/QuanLyBinhLuan/QuanLyBinhLuan'
 import ShowTimesPage from './pages/homepages/ShowTimes/ShowTimes'
 import BookingPage from './pages/homepages/Booking/BookingPage'
-import PaymentResultPage from './pages/homepages/Booking/PaymentResultPage'
 import MyTicketsPage from './pages/homepages/Booking/MyTicketsPage'
+import ConfirmBookingPage from './pages/homepages/Booking/ConfirmBookingPage'
+import BookingSuccessPage from './pages/homepages/Booking/BookingSuccessPage'
+import ScrollToTop from './components/ScrollToTop'
+import PageLoader from './components/PageLoader'
+import AdminRoute from './adminRouter'
 function App() {
 
   return (
@@ -42,6 +46,8 @@ function App() {
         pauseOnHover
         theme="dark"
       />
+      <PageLoader />
+      <ScrollToTop />
       <Routes>
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
@@ -50,25 +56,26 @@ function App() {
         <Route path='/' element={<DefaultLayOut />}>
           <Route index element={<HomePages />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/promotions' element={<PromotionsPage />}/>
+          <Route path='/promotions' element={<PromotionsPage />} />
           <Route path="/promotions/:id" element={<PromotionDetailPage />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/phim-dang-chieu' element={<NowShowingPage />} />
           <Route path='/phim-sap-cong-chieu' element={<ComingSoonPage />} />
           <Route path="/movies/:id" element={<MovieDetailPage />} />
           <Route path="/lich-chieu" element={<ShowTimesPage />} />
-           <Route path="/booking/:id" element={<BookingPage />} />
-           <Route path="/payment-result" element={<PaymentResultPage />} />
-           <Route path="/user/my-tickets" element={<MyTicketsPage />} />
+          <Route path="/booking/:id" element={<BookingPage />} />
+          <Route path="/booking/confirm" element={<ConfirmBookingPage />} />
+          <Route path="/booking-success" element={<BookingSuccessPage />} />
+          <Route path="/user/my-tickets" element={<MyTicketsPage />} />
         </Route>
-        <Route path="/dashboard" element={<DashboardHome />} />
-        <Route path="/quan-ly-phim" element={<QuanLyPhim />} />
-        <Route path="/quan-ly-dat-ve-xem-phim" element={<QuanLyDatVeXemPhim />} />
-        <Route path="/quan-ly-xuat-chieu" element={<QuanLyXuatChieu />} />
-        <Route path="/quan-ly-phong-chieu" element={<QuanLyPhongChieu />} />
-        <Route path="/quan-ly-nguoi-dung" element={<QuanLyNguoiDung />} />
-        <Route path="/quan-ly-khuyen-mai" element={<QuanLyKhuyenMai />} />
-        <Route path="/quan-ly-binh-luan" element={<QuanLyBinhLuan />} />
+        <Route path="/dashboard" element={<AdminRoute><DashboardHome /></AdminRoute>}/>
+        <Route path="/quan-ly-phim" element={<AdminRoute><QuanLyPhim /> </AdminRoute>} />
+        <Route path="/quan-ly-dat-ve-xem-phim" element={<AdminRoute><QuanLyDatVeXemPhim /></AdminRoute>} />
+        <Route path="/quan-ly-xuat-chieu" element={<AdminRoute><QuanLyXuatChieu /></AdminRoute>} />
+        <Route path="/quan-ly-phong-chieu" element={<AdminRoute><QuanLyPhongChieu /></AdminRoute>} />
+        <Route path="/quan-ly-nguoi-dung" element={<AdminRoute><QuanLyNguoiDung /></AdminRoute>} />
+        <Route path="/quan-ly-khuyen-mai" element={<AdminRoute><QuanLyKhuyenMai /></AdminRoute>} />
+        <Route path="/quan-ly-binh-luan" element={<AdminRoute><QuanLyBinhLuan /></AdminRoute>} />
       </Routes>
     </>
 

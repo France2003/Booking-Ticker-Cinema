@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowLeft } from "lucide-react"
 import type { Promotion } from "../../../types/promotions/promotion.type"
 import { getPromotions } from "../../../services/promotions/promotions"
+import { Helmet } from "react-helmet"
 
 export default function PromotionDetailPage() {
   const { id } = useParams()
@@ -38,6 +39,10 @@ export default function PromotionDetailPage() {
     )
   return (
     <div className="min-h-screen bg-[#fafafa]">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{promotion.tenKhuyenMai}</title>
+      </Helmet>
       {/* Ảnh banner */}
       <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden">
         <motion.img
@@ -70,10 +75,10 @@ export default function PromotionDetailPage() {
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <span
               className={`px-3 py-1 rounded-full font-semibold ${promotion.loai === "percent"
-                  ? "bg-blue-100 text-blue-700"
-                  : promotion.loai === "fixed"
-                    ? "bg-emerald-100 text-emerald-700"
-                    : "bg-purple-100 text-purple-700"
+                ? "bg-blue-100 text-blue-700"
+                : promotion.loai === "fixed"
+                  ? "bg-emerald-100 text-emerald-700"
+                  : "bg-purple-100 text-purple-700"
                 }`}
             >
               {promotion.loai === "percent"
@@ -84,10 +89,10 @@ export default function PromotionDetailPage() {
             </span>
             <span
               className={`px-3 py-1 rounded-full font-semibold ${promotion.trangThai === "active"
-                  ? "bg-green-100 text-green-700"
-                  : promotion.trangThai === "upcoming"
-                    ? "bg-yellow-100 text-yellow-700"
-                    : "bg-red-100 text-red-700"
+                ? "bg-green-100 text-green-700"
+                : promotion.trangThai === "upcoming"
+                  ? "bg-yellow-100 text-yellow-700"
+                  : "bg-red-100 text-red-700"
                 }`}
             >
               {promotion.trangThai === "active"

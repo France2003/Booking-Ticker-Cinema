@@ -1,0 +1,514 @@
+[15:58:32 7/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 2 phút).
+[16:00:00 7/11/2025] ───────────────────────────────────────────────
+[16:00:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé lúc 16:00:00 7/11/2025
+[16:00:00 7/11/2025] ✅ [Cron] Không có vé nào cần hủy.
+[16:02:00 7/11/2025] ───────────────────────────────────────────────
+[16:02:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé lúc 16:02:00 7/11/2025
+[16:02:00 7/11/2025] ⚠️ [Cron] Tìm thấy 1 vé quá hạn:
+[16:02:00 7/11/2025]    → BK-ZXOBRO (CỤC VÀNG CỦA NGOẠI)
+[16:02:02 7/11/2025] 📨 [Cron] Đã gửi email hủy đến: phap_2151220077@dau.edu.vn
+[16:02:02 7/11/2025] ✅ [Cron] Hoàn tất xử lý hủy vé quá hạn.
+
+[16:04:00 7/11/2025] ───────────────────────────────────────────────
+[16:04:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé lúc 16:04:00 7/11/2025
+[16:04:00 7/11/2025] ✅ [Cron] Không có vé nào cần hủy.
+[16:06:00 7/11/2025] ───────────────────────────────────────────────
+[16:06:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé lúc 16:06:00 7/11/2025
+[16:06:00 7/11/2025] ✅ [Cron] Không có vé nào cần hủy.
+[16:06:49 7/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:33:31 7/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 2 phút - test mode).
+[16:33:42 7/11/2025] 💳 [Create] PaymentIntent tạo cho BK-LUKRY_ (hết hạn sau 24h)
+[16:34:00 7/11/2025] ───────────────────────────────────────────────
+[16:34:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:34:00 7/11/2025
+[16:34:00 7/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:36:00 7/11/2025] ───────────────────────────────────────────────
+[16:36:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:36:00 7/11/2025
+[16:36:00 7/11/2025] ⚠️ [Cron] Tìm thấy 1 vé quá hạn cần hủy:
+[16:36:00 7/11/2025]    → BK-LUKRY_ (TỬ CHIẾN TRÊN KHÔNG)
+[16:36:00 7/11/2025] 💳 [Cron] Đã hết hạn PaymentIntent của BK-LUKRY_
+[16:36:03 7/11/2025] 📨 [Cron] Đã gửi email hủy vé đến: phap_2151220077@dau.edu.vn
+[16:36:03 7/11/2025] ✅ [Cron] Hoàn tất xử lý hủy vé quá hạn (test mode).
+
+[16:38:00 7/11/2025] ───────────────────────────────────────────────
+[16:38:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:38:00 7/11/2025
+[16:38:00 7/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:40:00 7/11/2025] ───────────────────────────────────────────────
+[16:40:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:40:00 7/11/2025
+[16:40:00 7/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:42:00 7/11/2025] ───────────────────────────────────────────────
+[16:42:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:42:00 7/11/2025
+[16:42:00 7/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:44:00 7/11/2025] ───────────────────────────────────────────────
+[16:44:00 7/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:44:00 7/11/2025
+[16:44:00 7/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[10:37:14 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:00:00 10/11/2025] ───────────────────────────────────────────────
+[11:00:00 10/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 11:00:00 10/11/2025
+[11:00:00 10/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[11:55:42 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:00:00 10/11/2025] ───────────────────────────────────────────────
+[12:00:00 10/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 12:00:00 10/11/2025
+[12:00:00 10/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[12:15:55 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:19:37 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:22:34 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:40:04 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:41:17 10/11/2025] ❌ [Webhook] Lỗi xử lý thanh toán: Cannot destructure property 'transactionId' of 'req.body' as it is undefined.
+[12:46:55 10/11/2025] 📩 [Webhook] Nhận giao dịch mới: CK BK-ABC123 thanh toan ve xem phim | 80000đ | Vietcombank | BUI DINH PHAP
+[12:46:55 10/11/2025] ❌ [Webhook] Không tìm thấy vé có mã BK-ABC123
+[12:47:25 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:47:34 10/11/2025] 📩 [Webhook] Nhận giao dịch mới: CK BK-ABC123 thanh toan ve xem phim | 80000đ | Vietcombank | BUI DINH PHAP
+[12:47:34 10/11/2025] ❌ [Webhook] Không tìm thấy vé có mã BK-ABC123
+[12:50:10 10/11/2025] 📩 [Webhook] Nhận giao dịch mới: CK BK-YQOAXO thanh toan ve xem phim | 80000đ | Vietcombank | BUI DINH PHAP
+[12:50:10 10/11/2025] 💳 [Webhook] Xác nhận thanh toán cho vé BK-YQOAXO (Vietcombank - BUI DINH PHAP)
+[12:50:10 10/11/2025] ✅Vé BK-YQOAXO (80000 VNĐ ) đã thanh toán qua Vietcombank từ BUI DINH PHAP
+[12:50:10 10/11/2025] 🎟️ [Webhook] Ghế A5 được đánh dấu là đã đặt.
+[12:50:13 10/11/2025] 📧 [Webhook] Đã gửi mail xác nhận thanh toán cho phap_2151220077@dau.edu.vn
+[12:56:14 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:00:00 10/11/2025] ───────────────────────────────────────────────
+[13:00:00 10/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 13:00:00 10/11/2025
+[13:00:00 10/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[13:01:59 10/11/2025] 📩 [Webhook] Nhận giao dịch mới: CK BKMJPSYW thanh toan ve xem phim | 80000đ | Vietcombank | BUI DINH PHAP
+[13:01:59 10/11/2025] ⚠️ [Webhook] Không tìm thấy mã vé trong nội dung CK
+[13:04:04 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:05:04 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:08:53 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:19:23 10/11/2025] 📩 [Webhook] Nhận giao dịch mới: CK BKKJUYT2 thanh toan ve xem phim | 80000đ | Vietcombank | BUI DINH PHAP
+[13:19:23 10/11/2025] 💳 [Webhook] Xác nhận thanh toán cho vé BKKJUYT2 (Vietcombank - BUI DINH PHAP)
+[13:19:23 10/11/2025] ✅Vé BKKJUYT2 (80000 VNĐ ) đã thanh toán qua Vietcombank từ BUI DINH PHAP
+[13:19:24 10/11/2025] 🎟️ [Webhook] Ghế A5 được đánh dấu là đã đặt.
+[13:19:27 10/11/2025] 📧 [Webhook] Đã gửi mail xác nhận thanh toán cho phap_2151220077@dau.edu.vn
+[14:00:00 10/11/2025] ───────────────────────────────────────────────
+[14:00:00 10/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 14:00:00 10/11/2025
+[14:00:00 10/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:24:58 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:35:19 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:37:42 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:38:00 10/11/2025] 🧾 [Booking] Tạo vé mới BKKLDWCE (A4)
+[14:38:01 10/11/2025] 🟢 [MoMo] Gửi yêu cầu thanh toán cho BKKLDWCE (80000đ)
+[14:58:07 10/11/2025] 🧾 [Booking] Tạo vé mới BKZOSZSN (A4)
+[14:58:07 10/11/2025] 🟢 [MoMo] Gửi yêu cầu thanh toán cho BKZOSZSN (80000đ)
+[15:00:00 10/11/2025] ───────────────────────────────────────────────
+[15:00:00 10/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 15:00:00 10/11/2025
+[15:00:00 10/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[15:01:39 10/11/2025] 📩 [MoMo Callback] orderId=BKZOSZSN | resultCode=0 | amount=80000
+[15:01:39 10/11/2025] ✅ [MoMo] Vé BKZOSZSN thanh toán thành công - 80000đ
+[15:01:42 10/11/2025] 📧 [MoMo] Đã gửi email xác nhận cho phap_2151220077@dau.edu.vn
+[15:16:50 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:54:52 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:56:31 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:59:13 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:00:00 10/11/2025] ───────────────────────────────────────────────
+[16:00:00 10/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:00:00 10/11/2025
+[16:00:00 10/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:05:14 10/11/2025] 🧾 [Booking] Tạo vé mới BKWZV78C (A3)
+[16:05:14 10/11/2025] 🟢 [MoMo] Gửi yêu cầu thanh toán cho BKWZV78C (80000đ)
+[16:06:20 10/11/2025] ✅ [Admin] Cập nhật vé BKWZV78C → paid
+[16:13:59 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:17:46 10/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn đặt vé BK4ADSYY (A5) – Tổng 130.000đ
+[16:25:20 10/11/2025] ✅ [Admin] Cập nhật vé BK4ADSYY → paid
+[16:32:02 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:32:31 10/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn đặt vé BKE3LZW2 (A6) – Tổng 80.000đ
+[16:32:31 10/11/2025] 🟢 [MoMo] Gửi yêu cầu thanh toán cho BKE3LZW2 (80000đ)
+[16:33:20 10/11/2025] ✅ [Admin] Cập nhật vé BKE3LZW2 → paid
+[16:39:23 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:40:21 10/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn đặt vé BKZAFIUZ (A6) – Tổng 80.000đ
+[16:40:21 10/11/2025] 🟢 [MoMo] Gửi yêu cầu thanh toán cho BKZAFIUZ (80000đ)
+[16:41:29 10/11/2025] ✅ [Admin] Cập nhật vé BKZAFIUZ → paid
+[16:49:38 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:50:28 10/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn đặt vé BKB2HTZZ (A4) – Tổng 80.000đ
+[16:52:48 10/11/2025] ✅ [Admin] Cập nhật vé BKB2HTZZ → cancelled
+[16:56:01 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:00:00 10/11/2025] ───────────────────────────────────────────────
+[17:00:00 10/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 17:00:00 10/11/2025
+[17:00:00 10/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[17:04:51 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:07:20 10/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn đặt vé BKGIBFEX (A5) – Tổng 100.000đ
+[17:10:59 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:13:42 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:18:43 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:21:30 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:23:39 10/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn đặt vé BKDQPF_3 (A6) – MoMo – Tổng 130.000đ
+[17:23:40 10/11/2025] 🟢 [MoMo] Gửi yêu cầu thanh toán cho BKDQPF_3 (130000đ)
+[17:23:58 10/11/2025] ✅ [Admin] Cập nhật vé BKDQPF_3 → cancelled
+[18:36:55 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[18:45:21 10/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn đặt vé BK2V2AP8 (A3) – MoMo – Tổng 100.000đ
+[19:00:00 10/11/2025] ───────────────────────────────────────────────
+[19:00:00 10/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 19:00:00 10/11/2025
+[19:00:00 10/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[19:02:16 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[19:14:02 10/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:12:07 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:12:56 11/11/2025] ✅ [Admin] Cập nhật vé BK2V2AP8 → cancelled
+[08:14:57 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A1 (BKQ5RITN) – QR Banking – 80.000đ
+[08:27:37 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:29:31 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A2 (BKBGPFZ9) – QR Banking – 80.000đ
+[08:30:46 11/11/2025] ✅ [Admin] Cập nhật vé BKBGPFZ9 → paid
+[08:47:35 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A3 (BKCLBTEN) – QR Banking – 80.000đ
+[08:48:48 11/11/2025] ✅ [Admin] Cập nhật vé BKCLBTEN → paid
+[08:58:33 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:00:00 11/11/2025] ───────────────────────────────────────────────
+[09:00:00 11/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 09:00:00 11/11/2025
+[09:00:00 11/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[09:00:59 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:09:09 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:40:45 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:41:44 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:44:52 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A4 (BKYFFPQY) – MoMo – 80.000đ
+[09:45:37 11/11/2025] ✅ [Admin] Cập nhật vé BKYFFPQY → paid
+[09:47:20 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:55:48 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:00:00 11/11/2025] ───────────────────────────────────────────────
+[14:00:00 11/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 14:00:00 11/11/2025
+[14:00:00 11/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:09:36 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:09:54 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A7 (BKSDFHUX) – MoMo – 80.000đ
+[14:10:32 11/11/2025] ✅ [Admin] Cập nhật vé BKSDFHUX → paid
+[14:19:58 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:37:02 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:37:29 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BKSUHGM6) – QR Banking – 100.000đ
+[14:39:16 11/11/2025] ✅ [Admin] Cập nhật vé BKSUHGM6 → paid
+[14:50:07 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:51:10 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A3 (BKUQTYM4) – Tiền mặt – 80.000đ
+[14:51:31 11/11/2025] ✅ [Admin] Cập nhật vé BKUQTYM4 → paid
+[14:59:37 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:00:18 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A5 (BK9SKOEH) – QR Banking – 80.000đ
+[15:00:38 11/11/2025] ✅ [Admin] Cập nhật vé BK9SKOEH → paid
+[15:04:51 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:05:26 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BKMVPY-C) – MoMo – 80.000đ
+[15:05:48 11/11/2025] ✅ [Admin] Cập nhật vé BKMVPY-C → paid
+[15:07:20 11/11/2025] 🎫 [Booking] phapcv2003@gmail.com giữ ghế A9 (BK3E9ILT) – MoMo – 80.000đ
+[15:07:35 11/11/2025] ✅ [Admin] Cập nhật vé BK3E9ILT → paid
+[15:11:10 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A5 (BKLOYKSL) – QR Banking – 100.000đ
+[15:11:18 11/11/2025] ✅ [Admin] Cập nhật vé BKLOYKSL → paid
+[15:15:28 11/11/2025] 🎫 [Booking] phapcv2003@gmail.com giữ ghế A7 (BK-NBDRI) – QR Banking – 80.000đ
+[15:15:39 11/11/2025] ✅ [Admin] Cập nhật vé BK-NBDRI → paid
+[15:21:25 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A6 (BKPBIFS7) – QR Banking – 80.000đ
+[15:22:00 11/11/2025] ✅ [Admin] Cập nhật vé BKPBIFS7 → paid
+[15:23:30 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:24:27 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BKJOGK3G) – MoMo – 80.000đ
+[15:24:33 11/11/2025] ✅ [Admin] Cập nhật vé BKJOGK3G → paid
+[15:25:21 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế C8 (BK40AW97) – Tiền mặt – 80.000đ
+[15:25:27 11/11/2025] ✅ [Admin] Cập nhật vé BK40AW97 → paid
+[15:39:15 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:39:53 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:40:13 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:53:39 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A7 (BK31PDHI) – MoMo – 80.000đ
+[15:54:26 11/11/2025] ✅ [Admin] Cập nhật vé BK31PDHI → paid
+[16:00:00 11/11/2025] ───────────────────────────────────────────────
+[16:00:00 11/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:00:00 11/11/2025
+[16:00:00 11/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:00:38 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:04:23 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:06:38 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A9 (BKSMUT4P) – MoMo – 80.000đ
+[16:11:34 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:12:04 11/11/2025] ✅ [Admin] Cập nhật vé BKSMUT4P → cancelled
+[16:12:29 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A6 (BKDIFAAG) – Tiền mặt – 80.000đ
+[16:14:08 11/11/2025] ✅ [Admin] Cập nhật vé BKDIFAAG → paid
+[16:32:31 11/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:33:29 11/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BKGPWIRJ) – MoMo – 80.000đ
+[08:13:21 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:17:29 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BKAM6X-I) – MoMo – 80.000đ
+[08:18:09 12/11/2025] ✅ [Admin] Cập nhật vé BKAM6X-I → paid
+[08:25:26 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:28:40 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A3 (BKB6TU0E) – MoMo – 80.000đ
+[08:34:53 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:35:03 12/11/2025] ✅ [Admin] Cập nhật vé BKB6TU0E → cancelled
+[08:37:28 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A3 (BKBZSG8S) – MoMo – 80.000đ
+[08:41:38 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A6 (BKVLOFZV) – QR Banking – 80.000đ
+[08:42:57 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:45:42 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:46:27 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A6 (BKOYWCK8) – MoMo – 80.000đ
+[08:48:58 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:49:33 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A6 (BKLF3_8I) – MoMo – 36.000đ
+[08:51:14 12/11/2025] ✅ [Admin] Cập nhật vé BKLF3_8I → paid
+[09:00:00 12/11/2025] ───────────────────────────────────────────────
+[09:00:00 12/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 09:00:00 12/11/2025
+[09:00:00 12/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[09:08:49 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BKFJOE3X) – Tiền mặt – 36.000đ
+[09:10:48 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:11:30 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A1 (BKIGR5FD) – MoMo – 36.000đ
+[09:12:39 12/11/2025] ✅ [Admin] Cập nhật vé BKIGR5FD → paid
+[09:23:10 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A4 (BKLDK3NH) – MoMo – 52.000đ
+[09:23:34 12/11/2025] ✅ [Admin] Cập nhật vé BKLDK3NH → paid
+[09:46:04 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A3 (BKUHM3XS) – QR Banking – 36.000đ
+[09:48:24 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A12 (BKQHMOYY) – MoMo – 48.000đ
+[09:48:37 12/11/2025] ✅ [Admin] Cập nhật vé BKQHMOYY → paid
+[09:48:56 12/11/2025] ✅ [Admin] Cập nhật vé BKUHM3XS → paid
+[09:49:46 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:50:22 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A5 (BKEAST-6) – MoMo – 40.000đ
+[10:00:00 12/11/2025] ───────────────────────────────────────────────
+[10:00:00 12/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 10:00:00 12/11/2025
+[10:00:00 12/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[10:14:20 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BKT3G6KN) – MoMo – 40.000đ
+[10:16:22 12/11/2025] ✅ [Admin] Cập nhật vé BKT3G6KN → paid
+[10:17:33 12/11/2025] 🎫 [Booking] phapcv2003@gmail.com giữ ghế A2 (BK8KNO9-) – MoMo – 36.000đ
+[10:17:55 12/11/2025] ✅ [Admin] Cập nhật vé BK8KNO9- → paid
+[10:18:34 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A1 (BKWAUZR5) – Tiền mặt – 36.000đ
+[10:25:48 12/11/2025] ✅ [Admin] Cập nhật vé BKWAUZR5 → paid
+[10:29:42 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế C5 (BK-IJD0L) – MoMo – 156.000đ
+[10:37:00 12/11/2025] ✅ [Admin] Cập nhật vé BK-IJD0L → paid
+[10:57:15 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:00:00 12/11/2025] ───────────────────────────────────────────────
+[11:00:00 12/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 11:00:00 12/11/2025
+[11:00:00 12/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[11:00:27 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế D9 (BKJCJMHM) – QR Banking – 109.000đ
+[11:14:08 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:16:58 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế D8 (BKU3RDBN) – Tiền mặt – 122.200đ
+[11:19:45 12/11/2025] ✅ [Admin] Cập nhật vé BKU3RDBN → cancelled
+[11:30:47 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:31:22 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế F6 (BK2YH9XO) – QR Banking – 122.200đ
+[11:37:54 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế E10 (BKD1LFKM) – QR Banking – 120.000đ
+[11:40:26 12/11/2025] ✅ [Admin] Cập nhật vé BKD1LFKM → paid
+[11:40:30 12/11/2025] ✅ [Admin] Cập nhật vé BK2YH9XO → paid
+[11:41:06 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A3, E11 (BK8JI2DS) – MoMo – 240.000đ
+[11:41:34 12/11/2025] ✅ [Admin] Cập nhật vé BK8JI2DS → cancelled
+[13:05:35 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:21:02 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:26:07 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:32:30 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A9 (BK82YC8O) – MoMo – 36.000đ
+[13:37:58 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:45:27 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:46:32 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:49:58 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:51:20 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A9 (BKNHUMHR) – Tiền mặt – 40.000đ
+[13:51:35 12/11/2025] ✅ [Admin] Cập nhật vé BKNHUMHR → cancelled
+[13:56:26 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:00:00 12/11/2025] ───────────────────────────────────────────────
+[14:00:00 12/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 14:00:00 12/11/2025
+[14:00:00 12/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:01:17 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:03:08 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:11:55 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:14:14 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:14:41 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BK-LVMSV) – QR Banking – 36.000đ
+[14:16:34 12/11/2025] 🎫 [Booking] phapcv2003@gmail.com giữ ghế J4, J5, J6 (BKBR45AG) – MoMo – 108.000đ
+[14:19:21 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế D9 (BKMN3TC1) – QR Banking – 36.000đ
+[14:19:39 12/11/2025] ✅ [Admin] Cập nhật vé BKMN3TC1 → cancelled
+[14:41:14 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:45:50 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:48:12 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:53:22 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:58:05 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:59:58 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:00:00 12/11/2025] ───────────────────────────────────────────────
+[15:00:00 12/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 15:00:00 12/11/2025
+[15:00:00 12/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[15:00:45 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A6 (BKACZLGS) – MoMo – 71.000đ
+[15:04:18 12/11/2025] ✅ [Admin] Cập nhật vé BKACZLGS → paid
+[15:08:11 12/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A8 (BKQWKWDG) – MoMo – 129.000đ
+[15:08:27 12/11/2025] ✅ [Admin] Cập nhật vé BKQWKWDG → paid
+[15:13:33 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:18:33 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:32:53 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:36:03 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:46:25 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:00:00 12/11/2025] ───────────────────────────────────────────────
+[16:00:00 12/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:00:00 12/11/2025
+[16:00:00 12/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:03:16 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:38:32 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:41:23 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:46:25 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:55:44 12/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:06:56 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[08:17:44 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:04:59 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:06:41 13/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế A5 (BKHEVRTT) – MoMo – 20.000đ
+[09:09:04 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:21:17 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:23:56 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:25:38 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:27:06 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:32:58 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:34:15 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:37:13 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:39:15 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:40:23 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:43:09 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:44:04 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:45:20 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:46:49 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:56:13 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[10:00:00 13/11/2025] ───────────────────────────────────────────────
+[10:00:00 13/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 10:00:00 13/11/2025
+[10:00:00 13/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[10:03:08 13/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[10:04:01 13/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế C8 (BK9OQIOH) – MoMo – 99.000đ
+[10:04:30 13/11/2025] ✅ [Admin] Cập nhật vé BK9OQIOH → paid
+[13:04:25 14/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:00:00 14/11/2025] ───────────────────────────────────────────────
+[14:00:00 14/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 14:00:00 14/11/2025
+[14:00:00 14/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[10:50:34 15/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[10:49:14 16/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:00:00 16/11/2025] ───────────────────────────────────────────────
+[11:00:00 16/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 11:00:00 16/11/2025
+[11:00:00 16/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[15:00:00 16/11/2025] ───────────────────────────────────────────────
+[15:00:00 16/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 15:00:00 16/11/2025
+[15:00:00 16/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:00:00 16/11/2025] ───────────────────────────────────────────────
+[16:00:00 16/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:00:00 16/11/2025
+[16:00:00 16/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:06:10 16/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:12:04 16/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:00:00 16/11/2025] ───────────────────────────────────────────────
+[17:00:00 16/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 17:00:00 16/11/2025
+[17:00:00 16/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[13:20:05 17/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:35:56 17/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:58:01 17/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:59:27 17/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:00:00 17/11/2025] ───────────────────────────────────────────────
+[14:00:00 17/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 14:00:00 17/11/2025
+[14:00:00 17/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:09:30 17/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:47:55 17/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:00:00 17/11/2025] ───────────────────────────────────────────────
+[15:00:00 17/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 15:00:00 17/11/2025
+[15:00:00 17/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[15:06:08 17/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:38:39 17/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế E8 (BKWQUUBD) – MoMo – 104.000đ
+[15:38:54 17/11/2025] ✅ [Admin] Cập nhật vé BKWQUUBD → paid
+[15:48:18 17/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:00:00 17/11/2025] ───────────────────────────────────────────────
+[16:00:00 17/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:00:00 17/11/2025
+[16:00:00 17/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[18:13:08 18/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[10:31:07 19/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[10:42:22 19/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[10:43:59 19/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G6 (BKMNLEXJ) – MoMo – 99.000đ
+[10:44:34 19/11/2025] ✅ [Admin] Cập nhật vé BKMNLEXJ → paid
+[10:57:17 19/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:00:00 19/11/2025] ───────────────────────────────────────────────
+[11:00:00 19/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 11:00:00 19/11/2025
+[11:00:00 19/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[11:04:30 19/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:14:14 19/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:28:27 19/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:36:01 19/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:03:51 25/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:23:00 25/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:46:32 25/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:14:38 26/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[13:52:26 26/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:00:00 26/11/2025] ───────────────────────────────────────────────
+[14:00:00 26/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 14:00:00 26/11/2025
+[14:00:00 26/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:09:29 26/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G14 (BKWXVTGV) – MoMo – 86.200đ
+[14:10:50 26/11/2025] ✅ [Admin] Cập nhật vé BKWXVTGV → paid
+[14:14:11 26/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:17:09 26/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:20:17 26/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:21:21 26/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:31:47 26/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:36:26 26/11/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:44:13 26/11/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G8 (BKV308IK) – QR Banking – 131.000đ
+[14:46:45 26/11/2025] ✅ [Admin] Cập nhật vé BKV308IK → paid
+[15:00:00 26/11/2025] ───────────────────────────────────────────────
+[15:00:00 26/11/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 15:00:00 26/11/2025
+[15:00:00 26/11/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[11:20:30 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:36:32 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:00:00 1/12/2025] ───────────────────────────────────────────────
+[12:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 12:00:00 1/12/2025
+[12:00:00 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[13:00:00 1/12/2025] ───────────────────────────────────────────────
+[13:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 13:00:00 1/12/2025
+[13:00:00 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:00:00 1/12/2025] ───────────────────────────────────────────────
+[14:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 14:00:00 1/12/2025
+[14:00:00 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:58:11 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:00:00 1/12/2025] ───────────────────────────────────────────────
+[15:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 15:00:00 1/12/2025
+[15:00:00 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[15:13:43 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[15:24:50 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:00:00 1/12/2025] ───────────────────────────────────────────────
+[16:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:00:00 1/12/2025
+[16:00:00 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[16:50:03 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:52:40 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:55:30 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:58:05 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:00:00 1/12/2025] ───────────────────────────────────────────────
+[17:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 17:00:00 1/12/2025
+[17:00:00 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[17:02:40 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:09:16 1/12/2025] 🎫 [Booking] tranhongly0212@gmail.com giữ ghế G8 (BKCX8UMV) – QR Banking – 113.000đ
+[17:10:39 1/12/2025] ✅ [Admin] Cập nhật vé BKCX8UMV → paid
+[18:50:14 1/12/2025] 🎫 [Booking] tranhongly0212@gmail.com giữ ghế I7, I8 (BKCHWL05) – MoMo – 188.600đ
+[18:53:57 1/12/2025] ✅ [Admin] Cập nhật vé BKCHWL05 → paid
+[18:58:12 1/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế C7 (BKUZT3WG) – MoMo – 85.000đ
+[18:58:32 1/12/2025] ✅ [Admin] Cập nhật vé BKUZT3WG → paid
+[19:00:00 1/12/2025] ───────────────────────────────────────────────
+[19:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 19:00:00 1/12/2025
+[19:00:00 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[19:04:12 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[19:05:30 1/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G8 (BKEDENKZ) – Tiền mặt – 79.000đ
+[19:05:45 1/12/2025] ✅ [Admin] Cập nhật vé BKEDENKZ → paid
+[19:07:32 1/12/2025] 🎫 [Booking] tranhongly0212@gmail.com giữ ghế C9 (BK8AZW-1) – QR Banking – 99.000đ
+[19:07:58 1/12/2025] ✅ [Admin] Cập nhật vé BK8AZW-1 → paid
+[22:00:00 1/12/2025] ───────────────────────────────────────────────
+[22:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 22:00:00 1/12/2025
+[22:00:01 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[22:08:16 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[22:52:55 1/12/2025] 🎫 [Booking] nguyenquochuy@comfythings.com giữ ghế G6 (BKAIXJSL) – MoMo – 89.000đ
+[22:53:58 1/12/2025] ✅ [Admin] Cập nhật vé BKAIXJSL → paid
+[23:00:00 1/12/2025] ───────────────────────────────────────────────
+[23:00:00 1/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 23:00:00 1/12/2025
+[23:00:00 1/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[23:14:56 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[23:16:24 1/12/2025] 🎫 [Booking] nguyenquochuy@comfythings.com giữ ghế G5 (BKM5EK99) – MoMo – 103.000đ
+[23:16:51 1/12/2025] ✅ [Admin] Cập nhật vé BKM5EK99 → paid
+[23:31:38 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[23:37:46 1/12/2025] 🎫 [Booking] nguyenquochuy@comfythings.com giữ ghế C8 (BK0WWRKI) – Tiền mặt – 64.000đ
+[23:58:51 1/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[00:00:00 2/12/2025] ───────────────────────────────────────────────
+[00:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 00:00:00 2/12/2025
+[00:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[00:02:30 2/12/2025] 🎫 [Booking] phuongly2003@tiffincrane.com giữ ghế F8 (BKYLDFEB) – QR Banking – 119.000đ
+[00:02:58 2/12/2025] ✅ [Admin] Cập nhật vé BKYLDFEB → paid
+[00:07:40 2/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[00:08:36 2/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế B8 (BKBB0YI4) – Tiền mặt – 54.000đ
+[00:09:07 2/12/2025] ✅ [Admin] Cập nhật vé BKBB0YI4 → paid
+[00:17:52 2/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[00:20:42 2/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G8 (BKEWA6VI) – MoMo – 64.000đ
+[00:21:01 2/12/2025] ✅ [Admin] Cập nhật vé BKEWA6VI → paid
+[10:38:04 2/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:00:00 2/12/2025] ───────────────────────────────────────────────
+[11:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 11:00:00 2/12/2025
+[11:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[12:00:00 2/12/2025] ───────────────────────────────────────────────
+[12:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 12:00:00 2/12/2025
+[12:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[13:00:00 2/12/2025] ───────────────────────────────────────────────
+[13:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 13:00:00 2/12/2025
+[13:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:00:00 2/12/2025] ───────────────────────────────────────────────
+[14:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 14:00:00 2/12/2025
+[14:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[14:13:04 2/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G7 (BK0QIDXR) – MoMo – 99.000đ
+[14:17:53 2/12/2025] ✅ [Admin] Cập nhật vé BK0QIDXR → paid
+[14:21:53 2/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:22:36 2/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[14:24:39 2/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G7 (BK_O3A2E) – MoMo – 99.000đ
+[14:28:33 2/12/2025] ✅ [Admin] Cập nhật vé BK_O3A2E → paid
+[15:00:00 2/12/2025] ───────────────────────────────────────────────
+[15:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 15:00:00 2/12/2025
+[15:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[15:50:53 2/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[16:00:00 2/12/2025] ───────────────────────────────────────────────
+[16:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 16:00:00 2/12/2025
+[16:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[17:00:00 2/12/2025] ───────────────────────────────────────────────
+[17:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 17:00:00 2/12/2025
+[17:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[23:00:00 2/12/2025] ───────────────────────────────────────────────
+[23:00:00 2/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 23:00:00 2/12/2025
+[23:00:00 2/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[00:00:00 3/12/2025] ───────────────────────────────────────────────
+[00:00:00 3/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 00:00:00 3/12/2025
+[00:00:00 3/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).

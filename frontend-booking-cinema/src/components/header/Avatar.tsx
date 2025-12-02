@@ -65,6 +65,13 @@ const Avatar = () => {
               >
                 Hồ sơ cá nhân
               </Link>
+              <Link
+                to="/user/my-tickets"
+                className="block px-4 py-2 text-sm hover:bg-gray-100"
+                onClick={() => setOpen(false)}
+              >
+                Vé của tôi
+              </Link>
               <button
                 onClick={() => {
                   logout();

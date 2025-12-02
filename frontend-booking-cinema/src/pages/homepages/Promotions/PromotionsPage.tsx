@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { getPromotions } from "../../../services/promotions/promotions"
 import type { Promotion } from "../../../types/promotions/promotion.type"
 import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet"
 export default function PromotionsPage() {
     const [promotions, setPromotions] = useState<Promotion[]>([])
     const [loading, setLoading] = useState(true)
@@ -21,6 +22,10 @@ export default function PromotionsPage() {
             viewport={{ once: true }} // Chỉ chạy 1 lần
             className="mb-10 "
         >
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Ưu đãi</title>
+            </Helmet>
             <div className="min-h-screen bg-[#fafafa] py-12 px-4 md:px-10 lg:px-20">
                 <div className="max-w-[1200px] mx-auto">
                     <h1 className="text-3xl md:text-4xl font-bold text-center mb-10 uppercase text-[#0f172a]">

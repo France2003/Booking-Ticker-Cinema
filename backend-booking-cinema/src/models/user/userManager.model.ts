@@ -10,7 +10,9 @@ const userSchema = new Schema<IUser>(
         dateofbirth: { type: Date },
         gender: { type: String, enum: ["Nam", "Nữ", "Khác"], default: "Khác" },
         address: { type: String, default: "" },
-        lichsuDatVe: [String],
+        lichsuDatVe: [
+            { type: Schema.Types.ObjectId, ref: "Booking" }
+        ],
         role: { type: String, enum: ["user", "admin"], default: "user" },
         trangThai: { type: Boolean, default: true },
         ngayTao: { type: Date, default: Date.now },

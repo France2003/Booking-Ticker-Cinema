@@ -1,73 +1,161 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { getMyBookings } from "../../../services/booking/booking";
 import type { IBooking } from "../../../types/bookings/booking";
 import dayjs from "dayjs";
-import { QRCodeCanvas } from "qrcode.react";
 import "dayjs/locale/vi";
+import TicketCard from "../../../components/TicketCard";
+import { Film, Loader2 } from "lucide-react";
+import { Helmet } from "react-helmet";
+import { toast } from "react-toastify";
+import { socket } from "../../../utils/socket";
+import { useUser } from "../../../contexts/UserContext";
+import { playSound } from "../../../utils/playSound";
 
 dayjs.locale("vi");
+
 export default function MyTicketsPage() {
     const [bookings, setBookings] = useState<IBooking[]>([]);
     const [loading, setLoading] = useState(true);
+    const { user } = useUser();
+
+    // ⚙️ Ngăn đăng ký socket lặp lại
+    const socketRegistered = useRef(false);
+    // 📦 Lấy danh sách vé của người dùng
+    const fetchBookings = async () => {
+        try {
+            const data = await getMyBookings();
+            const filtered = data.filter((b: IBooking) => {
+                if (b.paymentStatus !== "cancelled") return true;
+                if (!b.updatedAt) return false;
+                const minutesSinceCancel = dayjs().diff(dayjs(b.updatedAt), "minute");
+                return minutesSinceCancel < 15;
+            });
+            setBookings(filtered);
+        } catch (err) {
+            console.error("❌ Không thể tải danh sách vé:", err);
+            toast.error("Không thể tải danh sách vé!");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // 🔔 Lắng nghe sự kiện socket
     useEffect(() => {
-        (async () => {
-            try {
-                const data = await getMyBookings();
-                setBookings(data);
-            } catch (err) {
-                console.error("Không thể tải danh sách vé:", err);
-            } finally {
-                setLoading(false);
-            }
-        })();
-    }, []);
+        if (!user?._id) return;
+
+        fetchBookings();
+
+        // 🔒 Chỉ đăng ký socket 1 lần
+        if (socketRegistered.current) return;
+        socketRegistered.current = true;
+
+        console.log("🎯 MyTicketsPage mounted for user:", user._id);
+
+        const handleConnect = () => {
+            console.log("🔗 Socket connected:", socket.id);
+            socket.emit("registerUser", user._id);
+            console.log("👤 Registered socket for user:", user._id);
+        };
+        const handleBookingUpdate = (data: any) => {
+            console.log("📩 Received bookingUpdate:", data);
+            // 🔊 Phát âm thanh phù hợp sau 300ms (mượt hơn)
+            setTimeout(() => {
+                playSound(data.status === "paid" ? "success" : "error");
+            }, 300);
+            // 💬 Hiển thị thông báo UI
+            const msg =
+                data.status === "paid"
+                    ? `✅ Vé ${data.bookingCode} đã được duyệt thành công!`
+                    : `❌ Vé ${data.bookingCode} đã bị hủy.`;
+
+            toast(
+                <div className="space-y-1">
+                    <p className="font-semibold text-gray-800">{msg}</p>
+                    <p className="text-sm text-gray-600">
+                        🎬 {data.movieTitle || "Không rõ phim"} <br />
+                        💺 {data.seats?.join(", ") || "—"} <br />
+                        💰 {data.totalPrice?.toLocaleString("vi-VN")} VNĐ
+                    </p>
+                </div>,
+                {
+                    position: "top-right",
+                    autoClose: 6000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: data.status === "paid" ? "light" : "colored",
+                    className:
+                        data.status === "paid"
+                            ? "bg-green-50 border-l-4 border-green-500 text-green-700"
+                            : "bg-red-50 border-l-4 border-red-500 text-red-700",
+                }
+            );
+
+            // 🕐 Cập nhật danh sách vé sau 0.5 giây
+            setTimeout(fetchBookings, 500);
+        };
+
+        // Kết nối socket
+        if (socket.connected) handleConnect();
+        else socket.on("connect", handleConnect);
+
+        socket.on("bookingUpdate", handleBookingUpdate);
+
+        // 🧹 Cleanup
+        return () => {
+            console.log("🧹 Cleanup socket listeners (MyTicketsPage)");
+            socket.off("connect", handleConnect);
+            socket.off("bookingUpdate", handleBookingUpdate);
+        };
+    }, [user?._id]);
+
+    // ⏳ Loading
     if (loading)
         return (
-            <div className="flex flex-col items-center justify-center min-h-[60vh] text-gray-600">
-                <div className="animate-spin border-4 border-orange-400 border-t-transparent rounded-full w-10 h-10 mb-3"></div>
-                <p>⏳ Đang tải danh sách vé...</p>
+            <div className="min-h-[70vh] flex flex-col items-center justify-center bg-gray-50 text-gray-600">
+                <Loader2 className="w-10 h-10 text-orange-500 animate-spin mb-3" />
+                <p className="font-medium">⏳ Đang tải danh sách vé của bạn...</p>
             </div>
         );
 
+    // 😢 Không có vé
     if (!bookings.length)
         return (
-            <div className="text-center py-20 text-gray-500">
-                <p>😢 Bạn chưa đặt vé nào.</p>
+            <div className="min-h-[70vh] flex flex-col items-center justify-center bg-gray-50 text-gray-500">
+                <Film className="w-14 h-14 text-gray-400 mb-3" />
+                <p className="text-lg font-medium">😢 Bạn chưa có vé nào được đặt.</p>
+                <p className="text-sm text-gray-400">
+                    Hãy đặt vé ngay để thưởng thức những bộ phim mới nhất!
+                </p>
             </div>
         );
+
+    // 🎫 Hiển thị danh sách vé
     return (
-        <div className="max-w-6xl mx-auto py-10 px-4">
-            <h1 className="text-2xl font-bold text-gray-800 mb-6">🎟️ Vé của tôi</h1>
-            <div className="grid md:grid-cols-2 gap-6">
-                {bookings.map((b) => (
-                    <div
-                        key={b._id}
-                        className="bg-white shadow-lg rounded-2xl p-5 border border-gray-100 flex flex-col sm:flex-row items-center gap-5"
-                    >
-                        <div className="flex-shrink-0">
-                            <QRCodeCanvas value={b.bookingCode} size={100} />
-                        </div>
-                        <div className="flex-1 text-sm text-gray-700 space-y-1">
-                            <h2 className="font-semibold text-gray-800 text-lg">
-                                {b.movieId?.tieuDe || "Phim"}
-                            </h2>
-                            <p><b>Mã vé:</b> {b.bookingCode}</p>
-                            <p><b>Ghế:</b> {b.seats.join(", ")}</p>
-                            <p><b>Tổng tiền:</b> {b.totalPrice.toLocaleString("vi-VN")}đ</p>
-                            <p>
-                                <b>Trạng thái:</b>{" "}
-                                {b.paymentStatus === "paid" ? (
-                                    <span className="text-green-600 font-medium">Đã thanh toán</span>
-                                ) : b.paymentStatus === "pending" ? (
-                                    <span className="text-yellow-600 font-medium">Đang xử lý</span>
-                                ) : (
-                                    <span className="text-red-500 font-medium">Đã hủy</span>
-                                )}
-                            </p>
-                            <p><b>Ngày đặt:</b> {dayjs(b.createdAt).format("DD/MM/YYYY HH:mm")}</p>
-                        </div>
+        <div className="min-h-screen bg-gray-50 py-10 px-4">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Vé của tôi</title>
+            </Helmet>
+
+            <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-10">
+                    <h1 className="text-3xl font-bold text-gray-900 mb-2">🎟️ Vé Của Tôi</h1>
+                    <p className="text-gray-600">
+                        Dưới đây là danh sách các vé bạn đã đặt. Bạn có thể quét mã QR để
+                        check-in nhanh tại rạp.
+                    </p>
+                </div>
+
+                <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
+                    <div className="grid sm:grid-cols-2 gap-6">
+                        {bookings.map((b) => (
+                            <TicketCard key={b._id} booking={b} />
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         </div>
     );

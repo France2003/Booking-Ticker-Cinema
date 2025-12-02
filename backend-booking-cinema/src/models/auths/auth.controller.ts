@@ -59,7 +59,6 @@ export const loginAdmin = async (req: Request, res: Response) => {
     const refreshToken = generateRefreshToken({ id: admin._id.toString(), role: "admin" });
     successResponse(res, { token, refreshToken, admin }, "Đăng nhập admin thành công");
 };
-
 // Gửi mail quên mật khẩu
 export const forgotPassword = async (req: Request, res: Response): Promise<void> => {
     try {
