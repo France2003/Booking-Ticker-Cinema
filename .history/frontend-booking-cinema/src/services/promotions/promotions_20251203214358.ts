@@ -9,7 +9,7 @@ export const createPromotion = async (data: any) => {
     return res.data
 }
 export const getActivePromotions = async () => {
-    const res = await api.get("/api/promotions/active");
+    const res = await api.get("/promotions/active");
     return res.data.data;
 };
 export const getPromotionById = async (id: string) => {

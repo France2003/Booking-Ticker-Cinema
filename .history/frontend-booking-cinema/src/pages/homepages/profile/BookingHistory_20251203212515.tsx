@@ -3,8 +3,12 @@ interface BookingHistoryProps {
     bookings: any[];
 }
 const BookingHistory: React.FC<BookingHistoryProps> = ({ bookings }) => {
-    const formatTime = (isoString: string) => {
-        return new Date(isoString).toLocaleTimeString("vi-VN", {
+    const formatDateTime = (isoString: string) => {
+        if (!isoString) return "";
+        return new Date(isoString).toLocaleString("vi-VN", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
             hour: "2-digit",
             minute: "2-digit",
         });
@@ -54,7 +58,7 @@ const BookingHistory: React.FC<BookingHistoryProps> = ({ bookings }) => {
                         {b.showtimeId && (
                             <p>
                                 ⏰ Suất chiếu: {formatDate(b.showtimeId.date)}{" "}
-                                ({formatTime(b.showtimeId.startTime)} - {formatTime(b.showtimeId.endTime)})
+                                ({formatDateTime(b.showtimeId.startTime)} - {formatDateTime(b.showtimeId.endTime)})
                             </p>
                         )}
 

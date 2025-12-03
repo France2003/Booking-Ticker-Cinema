@@ -3,7 +3,7 @@ import Slides from "../../components/Slides"
 import MovieTabs from "./MovieTab/MovieTabs"
 import Promotions from "./Promotions/Promotions"
 import { Helmet } from "react-helmet"
-import PromoPosterModal from "../../components/PromoModal"
+import PromoModal from "../../components/PromoModal"
 const HomePages = () => {
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden text-white bg-[#0F1D2F]">
@@ -11,7 +11,7 @@ const HomePages = () => {
         <meta charSet="utf-8" />
         <title>Trang chủ</title>
       </Helmet>
-      <PromoPosterModal />
+      <PromoModal />
       <section className="relative w-full overflow-hidden pb-2">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0F1D2F] via-[#0d1624] to-[#0b1420] z-0" />
         <div className="relative z-10 flex flex-col gap-2 lg:gap-4">

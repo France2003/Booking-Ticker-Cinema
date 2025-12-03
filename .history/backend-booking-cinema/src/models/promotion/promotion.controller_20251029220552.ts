@@ -38,21 +38,6 @@ export const getPromotionById = async (req: Request, res: Response): Promise<voi
         res.status(500).json({ message: "Lỗi khi lấy chi tiết", error })
     }
 }
-export const getActivePromotions = async (_: Request, res: Response): Promise<void> => {
-    try {
-        const now = new Date();
-
-        const promotions = await Promotion.find({
-            trangThai: "active",
-            ngayBatDau: { $lte: now },
-            ngayKetThuc: { $gte: now }
-        }).sort({ ngayTao: -1 });
-
-        res.json({ data: promotions });
-    } catch (error) {
-        res.status(500).json({ message: "Lỗi khi lấy khuyến mãi active", error });
-    }
-};
 
 // 🟠 Cập nhật khuyến mãi
 export const updatePromotion = async (req: Request, res: Response): Promise<void> => {

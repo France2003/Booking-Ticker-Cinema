@@ -25,10 +25,6 @@ export default function MyTicketsPage() {
         try {
             const data = await getMyBookings();
             const filtered = data.filter((b: IBooking) => {
-                const now = dayjs();
-                if (b.showtimeId?.endTime && dayjs(b.showtimeId.endTime).isBefore(now)) {
-                    return false;
-                }
                 if (b.paymentStatus !== "cancelled") return true;
                 if (!b.updatedAt) return false;
                 const minutesSinceCancel = dayjs().diff(dayjs(b.updatedAt), "minute");
