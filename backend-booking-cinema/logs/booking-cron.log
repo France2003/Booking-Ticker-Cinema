@@ -516,3 +516,44 @@
 [21:29:14 3/12/2025] 🎫 [Booking] phuongly2003@tiffincrane.com giữ ghế G8 (BKCTWQWL) – MoMo – 89.000đ
 [21:29:47 3/12/2025] ✅ [Admin] Cập nhật vé BKCTWQWL → paid
 [21:43:42 3/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[22:00:00 3/12/2025] ───────────────────────────────────────────────
+[22:00:00 3/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 22:00:00 3/12/2025
+[22:00:00 3/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[10:57:55 4/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[11:00:00 4/12/2025] ───────────────────────────────────────────────
+[11:00:00 4/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 11:00:00 4/12/2025
+[11:00:00 4/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[11:00:57 4/12/2025] 🎫 [Booking] tuankhoa2003@comfythings.com giữ ghế E6 (BK6OFLDU) – QR Banking – 118.200đ
+[11:01:10 4/12/2025] ✅ [Admin] Cập nhật vé BK6OFLDU → paid
+[11:04:39 4/12/2025] 🎫 [Booking] vovantai2003@comfythings.com giữ ghế D3 (BK2HPPYS) – Tiền mặt – 130.000đ
+[11:04:47 4/12/2025] ✅ [Admin] Cập nhật vé BK2HPPYS → paid
+[11:05:37 4/12/2025] 🎫 [Booking] vovantai2003@comfythings.com giữ ghế I7, I8 (BKZM2CX_) – QR Banking – 227.000đ
+[11:05:47 4/12/2025] ✅ [Admin] Cập nhật vé BKZM2CX_ → paid
+[11:07:07 4/12/2025] 🎫 [Booking] tuankhoa2003@comfythings.com giữ ghế I12, I13 (BKUYRPUF) – QR Banking – 237.000đ
+[11:07:21 4/12/2025] ✅ [Admin] Cập nhật vé BKUYRPUF → paid
+[11:14:29 4/12/2025] 🎫 [Booking] phapcv2003@gmail.com giữ ghế J4, J5, J6 (BKYYGWJM) – QR Banking – 315.800đ
+[11:14:38 4/12/2025] ✅ [Admin] Cập nhật vé BKYYGWJM → paid
+[12:11:16 5/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[12:14:28 5/12/2025] 🎫 [Booking] phapcv2003@gmail.com giữ ghế G6 (BKO7UNZ3) – MoMo – 79.000đ
+[12:14:41 5/12/2025] ✅ [Admin] Cập nhật vé BKO7UNZ3 → paid
+[12:16:43 5/12/2025] 🎫 [Booking] phuongly2003@tiffincrane.com giữ ghế D8 (BKQBJYVH) – MoMo – 130.000đ
+[12:16:53 5/12/2025] ✅ [Admin] Cập nhật vé BKQBJYVH → paid
+[17:30:26 5/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:53:36 5/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[17:56:48 5/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[18:00:00 5/12/2025] ───────────────────────────────────────────────
+[18:00:00 5/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 18:00:00 5/12/2025
+[18:00:00 5/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[18:10:17 5/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế D7 (BKJDAFPO) – QR Banking – 139.000đ
+[18:14:40 5/12/2025] ✅ [Admin] Cập nhật vé BKJDAFPO → cancelled
+[18:23:51 5/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế E6 (BKTD0G6Z) – QR Banking – 139.000đ
+[18:24:33 5/12/2025] ✅ [Admin] Cập nhật vé BKTD0G6Z → paid
+[18:32:32 5/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế E5 (BKT0E-ZY) – QR Banking – 139.000đ
+[18:32:54 5/12/2025] ✅ [Admin] Cập nhật vé BKT0E-ZY → cancelled
+[18:39:06 5/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế D7 (BK5GUMRW) – QR Banking – 139.000đ
+[18:39:57 5/12/2025] ✅ [Admin] Cập nhật vé BK5GUMRW → paid
+[18:52:33 5/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế E6 (BKZCM6FW) – QR Banking – 130.000đ
+[18:53:14 5/12/2025] ✅ [Admin] Cập nhật vé BKZCM6FW → paid
+[19:00:00 5/12/2025] ───────────────────────────────────────────────
+[19:00:00 5/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 19:00:00 5/12/2025
+[19:00:00 5/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
