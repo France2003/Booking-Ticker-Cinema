@@ -1,0 +1,54 @@
+[20:51:45 6/12/2025] [INFO] 🎬 Bắt đầu theo dõi thay đổi trạng thái phim...
+[20:51:45 6/12/2025] [INFO] 🚀 Khởi động CRON tự động tạo suất chiếu...
+[20:51:45 6/12/2025] [INFO] 🕒 Bắt đầu tạo suất chiếu cho tuần hiện tại...
+[20:51:45 6/12/2025] [INFO] 🧹 Đã xoá toàn bộ suất chiếu cũ hơn 1 tuần.
+[20:51:46 6/12/2025] [INFO] 📆 Tuần 1/12/2025 → 7/12/2025
+[20:51:46 6/12/2025] [INFO] ⏩ Đã có suất chiếu cho tuần hiện tại, bỏ qua tạo mới.
+[20:51:46 6/12/2025] [INFO] ✅ Suất chiếu ban đầu đã được tạo.
+[20:53:35 6/12/2025] [INFO] 🚀 Phim cập nhật sang đang chiếu: 5 CENTIMET TRÊN GIÂY (khởi chiếu 5/12/2025) → tạo suất chiếu ngay.
+[20:53:35 6/12/2025] [INFO] 🎬 Tạo lịch chiếu cho phim:  5 CENTIMET TRÊN GIÂY
+[20:53:35 6/12/2025] [INFO] 📅 6/12/2025 — 5 CENTIMET TRÊN GIÂY chiếu tại 2 phòng
+[20:53:35 6/12/2025] [INFO] 🎥 5 CENTIMET TRÊN GIÂY | 6 | 15:15 → 16:46 | 💰 110.000đ
+[20:53:35 6/12/2025] [INFO] 📽️ 6: 1/11 suất.
+[20:53:36 6/12/2025] [INFO] 📅 7/12/2025 — 5 CENTIMET TRÊN GIÂY chiếu tại 3 phòng
+[20:53:36 6/12/2025] [INFO] 🎥 5 CENTIMET TRÊN GIÂY | 7 | 13:15 → 14:46 | 💰 132.000đ
+[20:53:36 6/12/2025] [INFO] 📽️ 7: 1/10 suất.
+[20:53:37 6/12/2025] [INFO] ✅ Hoàn tất tạo 2 suất chiếu cho phim: 5 CENTIMET TRÊN GIÂY
+[20:53:37 6/12/2025] [INFO] ✅ Hoàn tất tạo suất chiếu cho phim cập nhật: 5 CENTIMET TRÊN GIÂY
+[20:53:47 6/12/2025] [INFO] 🚀 Phim cập nhật sang đang chiếu: CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE (khởi chiếu 5/12/2025) → tạo suất chiếu ngay.
+[20:53:47 6/12/2025] [INFO] 🎬 Tạo lịch chiếu cho phim:  CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE
+[20:53:47 6/12/2025] [INFO] 📅 6/12/2025 — CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE chiếu tại 3 phòng
+[20:53:48 6/12/2025] [INFO] 🎥 CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE | 5 | 17:30 → 19:13 | 💰 101.000đ
+[20:53:48 6/12/2025] [INFO] 🎥 CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE | 5 | 19:45 → 21:28 | 💰 101.000đ
+[20:53:48 6/12/2025] [INFO] 📽️ 5: 2/11 suất.
+[20:53:48 6/12/2025] [INFO] 📅 7/12/2025 — CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE chiếu tại 3 phòng
+[20:53:48 6/12/2025] [INFO] 🎥 CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE | 1 | 13:15 → 14:58 | 💰 88.000đ
+[20:53:49 6/12/2025] [INFO] 📽️ 1: 1/10 suất.
+[20:53:49 6/12/2025] [INFO] ✅ Hoàn tất tạo 3 suất chiếu cho phim: CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE
+[20:53:49 6/12/2025] [INFO] ✅ Hoàn tất tạo suất chiếu cho phim cập nhật: CHÚ THUẬT HỒI CHIẾN: BIẾN CỐ SHIBUYA x TỬ DIỆT HỒI DU - THE MOVIE
+[20:54:03 6/12/2025] [INFO] 🚀 Phim cập nhật sang đang chiếu: NĂM ĐÊM KINH HOÀNG 2 (khởi chiếu 5/12/2025) → tạo suất chiếu ngay.
+[20:54:03 6/12/2025] [INFO] 🎬 Tạo lịch chiếu cho phim:  NĂM ĐÊM KINH HOÀNG 2
+[20:54:03 6/12/2025] [INFO] 📅 6/12/2025 — NĂM ĐÊM KINH HOÀNG 2 chiếu tại 2 phòng
+[20:54:04 6/12/2025] [INFO] 🎥 NĂM ĐÊM KINH HOÀNG 2 | 3 | 13:00 → 14:59 | 💰 88.000đ
+[20:54:04 6/12/2025] [INFO] 📽️ 3: 1/11 suất.
+[20:54:04 6/12/2025] [INFO] 📅 7/12/2025 — NĂM ĐÊM KINH HOÀNG 2 chiếu tại 2 phòng
+[20:54:04 6/12/2025] [INFO] 🎥 NĂM ĐÊM KINH HOÀNG 2 | 5 | 15:30 → 17:29 | 💰 88.000đ
+[20:54:04 6/12/2025] [INFO] 📽️ 5: 1/10 suất.
+[20:54:04 6/12/2025] [INFO] ✅ Hoàn tất tạo 2 suất chiếu cho phim: NĂM ĐÊM KINH HOÀNG 2
+[20:54:04 6/12/2025] [INFO] ✅ Hoàn tất tạo suất chiếu cho phim cập nhật: NĂM ĐÊM KINH HOÀNG 2
+[20:55:09 6/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 (LỒNG TIẾNG) CẬU BÉ CÁ HEO VÀ BÍ MẬT 7 ĐẠI DƯƠNG (P) | 🆔 68fadf6a1276d10ee735fa7d | 🧹 Số suất chiếu bị xóa: 20 | ⏰ Thời điểm: 20:55:09 6/12/2025
+[20:55:13 6/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 NHỮNG LÁ THƯ CỦA YEON (P) | 🆔 68fa30444e88becf9bdbf41a | 🧹 Số suất chiếu bị xóa: 40 | ⏰ Thời điểm: 20:55:13 6/12/2025
+[20:55:19 6/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 TAY ANH GIỮ MỘT VÌ SAO (K) | 🆔 68f9cbe4c5c9d9e286bb97e7 | 🧹 Số suất chiếu bị xóa: 26 | ⏰ Thời điểm: 20:55:19 6/12/2025
+[20:55:24 6/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 NĂM CỦA ANH, NGÀY CỦA EM (T13) | 🆔 68f741a7fdd6abd0e10eeb7e | 🧹 Số suất chiếu bị xóa: 32 | ⏰ Thời điểm: 20:55:24 6/12/2025
+[20:55:28 6/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 VẬN MAY (T16) | 🆔 68f9e4121e2d10b4458a4da8 | 🧹 Số suất chiếu bị xóa: 39 | ⏰ Thời điểm: 20:55:28 6/12/2025
+[20:55:34 6/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 CẢI MẢ | 🆔 68fb1a0b63713362a0f46334 | 🧹 Số suất chiếu bị xóa: 39 | ⏰ Thời điểm: 20:55:34 6/12/2025
+[21:13:12 6/12/2025] [INFO] 🚀 Phim cập nhật sang đang chiếu: HOÀNG TỬ QUỶ (khởi chiếu 5/12/2025) → tạo suất chiếu ngay.
+[21:13:12 6/12/2025] [INFO] 🎬 Tạo lịch chiếu cho phim:  HOÀNG TỬ QUỶ
+[21:13:12 6/12/2025] [INFO] 📅 6/12/2025 — HOÀNG TỬ QUỶ chiếu tại 2 phòng
+[21:13:12 6/12/2025] [INFO] 🎥 HOÀNG TỬ QUỶ | 3 | 15:15 → 17:27 | 💰 88.000đ
+[21:13:12 6/12/2025] [INFO] 📽️ 3: 1/11 suất.
+[21:13:13 6/12/2025] [INFO] 📅 7/12/2025 — HOÀNG TỬ QUỶ chiếu tại 2 phòng
+[21:13:13 6/12/2025] [INFO] 🎥 HOÀNG TỬ QUỶ | 4 | 20:00 → 22:12 | 💰 101.000đ
+[21:13:13 6/12/2025] [INFO] 📽️ 4: 1/10 suất.
+[21:13:13 6/12/2025] [INFO] ✅ Hoàn tất tạo 2 suất chiếu cho phim: HOÀNG TỬ QUỶ
+[21:13:13 6/12/2025] [INFO] ✅ Hoàn tất tạo suất chiếu cho phim cập nhật: HOÀNG TỬ QUỶ
