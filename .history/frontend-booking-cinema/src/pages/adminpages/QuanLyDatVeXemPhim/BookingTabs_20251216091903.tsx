@@ -1,74 +1,47 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import dayjs from "dayjs";
 import BookingTable from "./BookingTable";
 import type { IBooking } from "../../../types/bookings/booking";
 
 interface Props {
-    categorized: {
-        today: IBooking[];
-        upcoming: IBooking[];
-        past: IBooking[];
-    };
+    bookings: IBooking[]; // 👈 dùng danh sách gốc
     handleApprove: (code: string) => void;
     handleReject: (code: string) => void;
 }
 
-const BookingTabs = ({ categorized, handleApprove, handleReject }: Props) => {
-    const [activeTab, setActiveTab] =
-        useState<"today" | "upcoming" | "past">("today");
-    const fixedCategorized = useMemo(() => {
-        const allBookings: IBooking[] = [
-            ...categorized.today,
-            ...categorized.upcoming,
-            ...categorized.past,
-        ];
+const BookingTabs = ({ bookings, handleApprove, handleReject }: Props) => {
+    const [activeTab, setActiveTab] = useState<"today" | "upcoming" | "past">("today");
 
+    // ✅ PHÂN LOẠI ĐÚNG THEO endTime
+    const categorized = useMemo(() => {
         const now = dayjs();
-        const todayStart = now.startOf("day");
 
         const today: IBooking[] = [];
         const upcoming: IBooking[] = [];
         const past: IBooking[] = [];
 
-        allBookings.forEach((b) => {
-            const showtime = b.showtimeId;
-            if (!showtime) return;
+        bookings.forEach((b) => {
+            const endTime = b.showtimeId?.endTime;
+            if (!endTime) return;
 
-            const showDate = dayjs(showtime.date);
-            const end = dayjs(showtime.endTime);
+            const end = dayjs(endTime);
 
-            // ❌ đã chiếu xong
             if (now.isAfter(end)) {
                 past.push(b);
-                return;
-            }
-
-            // 📅 suất chiếu của HÔM NAY (dù endTime qua ngày)
-            if (showDate.isSame(todayStart, "day")) {
+            } else if (now.isSame(end, "day")) {
                 today.push(b);
-                return;
-            }
-
-            // 🎞️ suất chiếu tương lai
-            if (showDate.isAfter(todayStart, "day")) {
+            } else {
                 upcoming.push(b);
-                return;
             }
-
-            // 🕰️ suất chiếu quá khứ
-            past.push(b);
         });
 
         return { today, upcoming, past };
-    }, [categorized]);
+    }, [bookings]);
 
-
-    /**
-     * Group theo NGÀY CHIẾU (CHỈ DÙNG ĐỂ HIỂN THỊ)
-     */
-    const groupByDate = (bookings: IBooking[]) => {
+    // ✅ Group theo ngày chiếu (CHỈ để hiển thị)
+    const groupByDate = (list: IBooking[]) => {
         const grouped: Record<string, IBooking[]> = {};
-        bookings.forEach((b) => {
+        list.forEach((b) => {
             const date = dayjs(b.showtimeId?.date).format("YYYY-MM-DD");
             if (!grouped[date]) grouped[date] = [];
             grouped[date].push(b);
@@ -76,8 +49,8 @@ const BookingTabs = ({ categorized, handleApprove, handleReject }: Props) => {
         return grouped;
     };
 
-    const renderGrouped = (bookings: IBooking[]) => {
-        const grouped = groupByDate(bookings);
+    const renderGrouped = (list: IBooking[]) => {
+        const grouped = groupByDate(list);
         const dates = Object.keys(grouped).sort();
 
         if (dates.length === 0) {
@@ -107,16 +80,16 @@ const BookingTabs = ({ categorized, handleApprove, handleReject }: Props) => {
             {/* Tabs Header */}
             <div className="flex gap-4 border-b mb-6">
                 {[
-                    { key: "today", label: `📅 Hôm nay (${fixedCategorized.today.length})` },
-                    { key: "upcoming", label: `🎞️ Sắp tới (${fixedCategorized.upcoming.length})` },
-                    { key: "past", label: `🕰️ Đã chiếu (${fixedCategorized.past.length})` },
+                    { key: "today", label: `📅 Hôm nay (${categorized.today.length})` },
+                    { key: "upcoming", label: `🎞️ Sắp tới (${categorized.upcoming.length})` },
+                    { key: "past", label: `🕰️ Đã chiếu (${categorized.past.length})` },
                 ].map(({ key, label }) => (
                     <button
                         key={key}
                         onClick={() => setActiveTab(key as any)}
                         className={`pb-2 font-semibold border-b-2 transition-all ${activeTab === key
-                            ? "border-pink-600 text-pink-600"
-                            : "border-transparent text-gray-500 hover:text-pink-500"
+                                ? "border-pink-600 text-pink-600"
+                                : "border-transparent text-gray-500 hover:text-pink-500"
                             }`}
                     >
                         {label}
@@ -126,9 +99,9 @@ const BookingTabs = ({ categorized, handleApprove, handleReject }: Props) => {
 
             {/* Nội dung tab */}
             <div className="animate-fadeIn">
-                {activeTab === "today" && renderGrouped(fixedCategorized.today)}
-                {activeTab === "upcoming" && renderGrouped(fixedCategorized.upcoming)}
-                {activeTab === "past" && renderGrouped(fixedCategorized.past)}
+                {activeTab === "today" && renderGrouped(categorized.today)}
+                {activeTab === "upcoming" && renderGrouped(categorized.upcoming)}
+                {activeTab === "past" && renderGrouped(categorized.past)}
             </div>
         </div>
     );

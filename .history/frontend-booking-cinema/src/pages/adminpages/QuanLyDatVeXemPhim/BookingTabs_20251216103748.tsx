@@ -16,6 +16,10 @@ interface Props {
 const BookingTabs = ({ categorized, handleApprove, handleReject }: Props) => {
     const [activeTab, setActiveTab] =
         useState<"today" | "upcoming" | "past">("today");
+
+    /**
+     * ✅ PHÂN LOẠI LẠI THEO endTime (NGHIỆP VỤ ĐÚNG)
+     */
     const fixedCategorized = useMemo(() => {
         const allBookings: IBooking[] = [
             ...categorized.today,
@@ -24,44 +28,28 @@ const BookingTabs = ({ categorized, handleApprove, handleReject }: Props) => {
         ];
 
         const now = dayjs();
-        const todayStart = now.startOf("day");
 
         const today: IBooking[] = [];
         const upcoming: IBooking[] = [];
         const past: IBooking[] = [];
 
         allBookings.forEach((b) => {
-            const showtime = b.showtimeId;
-            if (!showtime) return;
+            const endTime = b.showtimeId?.endTime;
+            if (!endTime) return;
 
-            const showDate = dayjs(showtime.date);
-            const end = dayjs(showtime.endTime);
+            const end = dayjs(endTime);
 
-            // ❌ đã chiếu xong
             if (now.isAfter(end)) {
-                past.push(b);
-                return;
+                past.push(b);               // ❌ đã chiếu
+            } else if (now.isSame(end, "day")) {
+                today.push(b);              // ✅ hôm nay (chưa chiếu xong)
+            } else {
+                upcoming.push(b);           // 🎞️ sắp tới
             }
-
-            // 📅 suất chiếu của HÔM NAY (dù endTime qua ngày)
-            if (showDate.isSame(todayStart, "day")) {
-                today.push(b);
-                return;
-            }
-
-            // 🎞️ suất chiếu tương lai
-            if (showDate.isAfter(todayStart, "day")) {
-                upcoming.push(b);
-                return;
-            }
-
-            // 🕰️ suất chiếu quá khứ
-            past.push(b);
         });
 
         return { today, upcoming, past };
     }, [categorized]);
-
 
     /**
      * Group theo NGÀY CHIẾU (CHỈ DÙNG ĐỂ HIỂN THỊ)
@@ -115,8 +103,8 @@ const BookingTabs = ({ categorized, handleApprove, handleReject }: Props) => {
                         key={key}
                         onClick={() => setActiveTab(key as any)}
                         className={`pb-2 font-semibold border-b-2 transition-all ${activeTab === key
-                            ? "border-pink-600 text-pink-600"
-                            : "border-transparent text-gray-500 hover:text-pink-500"
+                                ? "border-pink-600 text-pink-600"
+                                : "border-transparent text-gray-500 hover:text-pink-500"
                             }`}
                     >
                         {label}

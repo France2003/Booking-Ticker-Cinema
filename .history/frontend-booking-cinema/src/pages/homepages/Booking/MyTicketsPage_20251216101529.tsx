@@ -24,29 +24,16 @@ export default function MyTicketsPage() {
     const fetchBookings = async () => {
         try {
             const data = await getMyBookings();
-            const now = dayjs();
-
             const filtered = data.filter((b: IBooking) => {
-                const endTime = b.showtimeId?.endTime;
-
-                // ❌ Không có endTime → ẨN LUÔN
-                if (!endTime) return false;
-
-                const end = dayjs(endTime);
-
-                // ❌ Đã chiếu xong → ẨN
-                if (now.isAfter(end)) return false;
-
-                // ❌ Vé hủy quá 15 phút → ẨN
-                if (b.paymentStatus === "cancelled") {
-                    if (!b.updatedAt) return false;
-                    const minutes = now.diff(dayjs(b.updatedAt), "minute");
-                    return minutes < 15;
+                const now = dayjs();
+                if (b.showtimeId?.endTime && dayjs(b.showtimeId.endTime).isBefore(now)) {
+                    return false;
                 }
-
-                return true; // ✅ còn hiệu lực
+                if (b.paymentStatus !== "cancelled") return true;
+                if (!b.updatedAt) return false;
+                const minutesSinceCancel = dayjs().diff(dayjs(b.updatedAt), "minute");
+                return minutesSinceCancel < 15;
             });
-
             setBookings(filtered);
         } catch (err) {
             console.error("❌ Không thể tải danh sách vé:", err);
@@ -55,6 +42,7 @@ export default function MyTicketsPage() {
             setLoading(false);
         }
     };
+
     // 🔔 Lắng nghe sự kiện socket
     useEffect(() => {
         if (!user?._id) return;

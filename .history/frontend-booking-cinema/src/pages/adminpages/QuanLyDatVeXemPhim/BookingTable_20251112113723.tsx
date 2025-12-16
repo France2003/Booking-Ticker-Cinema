@@ -1,6 +1,5 @@
 import { CheckCircle, XCircle, User, Mail, Phone } from "lucide-react";
 import dayjs from "dayjs";
-import "dayjs/locale/vi";
 import type { IBooking } from "../../../types/bookings/booking";
 
 interface Props {
@@ -71,7 +70,8 @@ const BookingTable = ({ bookings, handleApprove, handleReject }: Props) => (
                             <div className="flex flex-col leading-tight">
                                 <span>{dayjs(b.showtimeId?.date).format("DD/MM/YYYY")}</span>
                                 <span className="text-xs text-gray-500">
-                                    {dayjs(b.showtimeId?.startTime).format("HH:mm")} -{dayjs(b.showtimeId?.endTime).format("HH:mm")}
+                                    {dayjs(b.showtimeId?.startTime).format("HH:mm")} -{" "}
+                                    {dayjs(b.showtimeId?.endTime).format("HH:mm")}
                                 </span>
                             </div>
                         </td>

@@ -55,6 +55,7 @@ export default function MyTicketsPage() {
             setLoading(false);
         }
     };
+
     // 🔔 Lắng nghe sự kiện socket
     useEffect(() => {
         if (!user?._id) return;

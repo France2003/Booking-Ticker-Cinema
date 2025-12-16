@@ -1,6 +1,5 @@
 import { CheckCircle, XCircle, User, Mail, Phone } from "lucide-react";
 import dayjs from "dayjs";
-import "dayjs/locale/vi";
 import type { IBooking } from "../../../types/bookings/booking";
 
 interface Props {

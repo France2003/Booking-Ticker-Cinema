@@ -569,3 +569,14 @@
 [21:00:17 6/12/2025] ✅ [Admin] Cập nhật vé BKFBFCQC → paid
 [21:00:57 6/12/2025] 🎫 [Booking] tuankhoa2003@comfythings.com giữ ghế J4, J5, J6 (BKMWG3QQ) – Tiền mặt – 431.000đ
 [21:01:08 6/12/2025] ✅ [Admin] Cập nhật vé BKMWG3QQ → paid
+[08:56:56 16/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:00:00 16/12/2025] ───────────────────────────────────────────────
+[09:00:00 16/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 09:00:00 16/12/2025
+[09:00:00 16/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[09:04:05 16/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G8 (BKN4WVZ-) – MoMo – 79.000đ
+[09:04:41 16/12/2025] ✅ [Admin] Cập nhật vé BKN4WVZ- → paid
+[10:00:00 16/12/2025] ───────────────────────────────────────────────
+[10:00:00 16/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 10:00:00 16/12/2025
+[10:00:00 16/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[10:41:47 16/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế C8 (BKYCOCKY) – Tiền mặt – 99.000đ
+[10:42:03 16/12/2025] ✅ [Admin] Cập nhật vé BKYCOCKY → paid
