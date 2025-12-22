@@ -177,7 +177,7 @@ export const addSeatToRoom = async (req: Request, res: Response): Promise<void> 
       res.status(400).json({ message: "Ghế đã tồn tại" });
       return
     }
-    room.seats.push({ seatNumber, type, price });
+    room.seats.push({ seatNumber, type, price, isBooked: false });
     room.totalSeats = room.seats.length;
     await room.save();
     res.status(201).json({ message: "Thêm ghế thành công", room });

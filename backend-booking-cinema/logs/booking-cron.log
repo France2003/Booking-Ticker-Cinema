@@ -586,3 +586,7 @@
 [09:56:52 22/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
 [09:57:36 22/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G8 (BKBC35N8) – QR Banking – 99.000đ
 [09:57:49 22/12/2025] ✅ [Admin] Cập nhật vé BKBC35N8 → paid
+[10:00:00 22/12/2025] ───────────────────────────────────────────────
+[10:00:00 22/12/2025] 🕐 [Cron] Bắt đầu kiểm tra vé chưa thanh toán lúc: 10:00:00 22/12/2025
+[10:00:00 22/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
+[10:10:25 22/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).

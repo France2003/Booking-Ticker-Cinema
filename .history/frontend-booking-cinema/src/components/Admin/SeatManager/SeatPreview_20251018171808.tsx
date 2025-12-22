@@ -1,6 +1,7 @@
 import type { IRoom, ISeat } from "../../../types/room/room.type";
 
-const getSeatColor = (type: ISeat["type"]) => {
+const getSeatColor = (type: ISeat["type"], isBooked?: boolean) => {
+    if (isBooked) return "bg-gray-500 cursor-not-allowed";
     switch (type) {
         case "Normal": return "bg-green-400 hover:bg-green-500";
         case "VIP": return "bg-red-500 hover:bg-red-600";
@@ -65,7 +66,7 @@ export default function SeatPreview({ seats, roomType }: SeatPreviewProps) {
                                     <div
                                         key={seat.seatNumber}
                                         title={`${seat.seatNumber} - ${seat.type} (${seat.price.toLocaleString()}đ)`}
-                                        className={`w-8 h-8 m-0.5 text-[10px] text-white flex items-center justify-center rounded ${getSeatColor(seat.type)}`}
+                                        className={`w-8 h-8 m-0.5 text-[10px] text-white flex items-center justify-center rounded ${getSeatColor(seat.type, seat.isBooked)}`}
                                     >
                                         {seat.seatNumber.slice(1)}
                                     </div>
@@ -79,7 +80,7 @@ export default function SeatPreview({ seats, roomType }: SeatPreviewProps) {
                                     <div
                                         key={seat.seatNumber}
                                         title={`${seat.seatNumber} - ${seat.type} (${seat.price.toLocaleString()}đ)`}
-                                        className={`w-8 h-8 m-0.5 text-[10px] text-white flex items-center justify-center rounded ${getSeatColor(seat.type)}`}
+                                        className={`w-8 h-8 m-0.5 text-[10px] text-white flex items-center justify-center rounded ${getSeatColor(seat.type, seat.isBooked)}`}
                                     >
                                         {seat.seatNumber.slice(1)}
                                     </div>

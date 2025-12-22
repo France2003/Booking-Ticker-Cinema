@@ -535,3 +535,10 @@
 [09:56:53 22/12/2025] [INFO] 📆 Tuần 22/12/2025 → 28/12/2025
 [09:56:53 22/12/2025] [INFO] ⏩ Đã có suất chiếu cho tuần hiện tại, bỏ qua tạo mới.
 [09:56:53 22/12/2025] [INFO] ✅ Suất chiếu ban đầu đã được tạo.
+[10:10:25 22/12/2025] [INFO] 🎬 Bắt đầu theo dõi thay đổi trạng thái phim...
+[10:10:25 22/12/2025] [INFO] 🚀 Khởi động CRON tự động tạo suất chiếu...
+[10:10:25 22/12/2025] [INFO] 🕒 Bắt đầu tạo suất chiếu cho tuần hiện tại...
+[10:10:26 22/12/2025] [INFO] 🧹 Đã xoá toàn bộ suất chiếu cũ hơn 1 tuần.
+[10:10:26 22/12/2025] [INFO] 📆 Tuần 22/12/2025 → 28/12/2025
+[10:10:26 22/12/2025] [INFO] ⏩ Đã có suất chiếu cho tuần hiện tại, bỏ qua tạo mới.
+[10:10:26 22/12/2025] [INFO] ✅ Suất chiếu ban đầu đã được tạo.
