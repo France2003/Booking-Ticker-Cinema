@@ -3,10 +3,16 @@ import { Request, Response } from "express";
 import { Booking } from "../bookings/booking.model";
 import { Showtime } from "../showtimes/showtime.model";
 import { Room } from "../room/room.model";
+
+/* =======================
+    COUNT STATISTICS
+======================= */
+
 export const getUserCount = async (req: Request, res: Response) => {
   const count = await UserModel.countDocuments({ role: "user" });
   res.json({ count });
 };
+
 export const getShowtimesCount = async (req: Request, res: Response) => {
   const count = await Showtime.countDocuments();
   res.json({ count });
@@ -20,10 +26,12 @@ export const getShowtimeCountThisWeek = async (req: Request, res: Response): Pro
     const day = startOfWeek.getDay() || 7; // CN = 7
     startOfWeek.setDate(startOfWeek.getDate() - day + 1);
     startOfWeek.setHours(0, 0, 0, 0);
+
     // ⏱ Kết thúc tuần (CN)
     const endOfWeek = new Date(startOfWeek);
     endOfWeek.setDate(endOfWeek.getDate() + 6);
     endOfWeek.setHours(23, 59, 59, 999);
+
     const count = await Showtime.countDocuments({
       startTime: {
         $gte: startOfWeek,
@@ -44,6 +52,7 @@ export const getRoomCount = async (req: Request, res: Response) => {
   const count = await Room.countDocuments();
   res.json({ count });
 };
+
 export const getBookingStats = async (req: Request, res: Response) => {
   const totalBookings = await Booking.countDocuments();
   const pendingBookings = await Booking.countDocuments({
@@ -52,41 +61,11 @@ export const getBookingStats = async (req: Request, res: Response) => {
 
   res.json({ totalBookings, pendingBookings });
 };
-export const getBookingCountThisWeek = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const now = new Date();
 
-    // Thứ 2
-    const startOfWeek = new Date(now);
-    const day = startOfWeek.getDay() || 7;
-    startOfWeek.setDate(startOfWeek.getDate() - day + 1);
-    startOfWeek.setHours(0, 0, 0, 0);
-
-    // Chủ nhật
-    const endOfWeek = new Date(startOfWeek);
-    endOfWeek.setDate(endOfWeek.getDate() + 6);
-    endOfWeek.setHours(23, 59, 59, 999);
-
-    const count = await Booking.countDocuments({
-      paymentStatus: "paid",
-      createdAt: {
-        $gte: startOfWeek,
-        $lte: endOfWeek,
-      },
-    });
-
-    res.json({
-      count,
-      startOfWeek,
-      endOfWeek,
-    });
-  } catch (err) {
-    res.status(500).json({ message: "Failed to count weekly bookings" });
-  }
-};
 /* ==========================================
     📌 1. HELPER: LẤY NGÀY ĐẦU TUẦN / CUỐI TUẦN
 ========================================== */
+
 const getWeekRange = (offset = 0) => {
   const today = new Date(Date.now() + 7 * 3600 * 1000);
   today.setHours(23, 59, 59, 999);

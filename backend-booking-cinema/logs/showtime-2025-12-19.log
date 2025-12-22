@@ -1,0 +1,71 @@
+[12:02:57 19/12/2025] [INFO] 🎬 Bắt đầu theo dõi thay đổi trạng thái phim...
+[12:02:57 19/12/2025] [INFO] 🚀 Khởi động CRON tự động tạo suất chiếu...
+[12:02:57 19/12/2025] [INFO] 🕒 Bắt đầu tạo suất chiếu cho tuần hiện tại...
+[12:02:58 19/12/2025] [INFO] 🧹 Đã xoá toàn bộ suất chiếu cũ hơn 1 tuần.
+[12:02:58 19/12/2025] [INFO] 📆 Tuần 15/12/2025 → 21/12/2025
+[12:02:58 19/12/2025] [INFO] ⏩ Đã có suất chiếu cho tuần hiện tại, bỏ qua tạo mới.
+[12:02:58 19/12/2025] [INFO] ✅ Suất chiếu ban đầu đã được tạo.
+[12:03:59 19/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 TỔ QUỐC TRONG TIM - THE CONCERT FILM (P) | 🆔 68f744c96790c5ae036bf4f0 | 🧹 Số suất chiếu bị xóa: 12 | ⏰ Thời điểm: 12:03:59 19/12/2025
+[12:04:19 19/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 QUÁN KỲ NAM | 🆔 692d337da32264e28440d5aa | 🧹 Số suất chiếu bị xóa: 12 | ⏰ Thời điểm: 12:04:19 19/12/2025
+[12:04:23 19/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 PHIÊN CHỢ CỦA QUỶ | 🆔 692d2ceca32264e28440d0f8 | 🧹 Số suất chiếu bị xóa: 21 | ⏰ Thời điểm: 12:04:23 19/12/2025
+[12:04:47 19/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 KỲ AN NGHỈ | 🆔 692d365ea32264e28440f2af | 🧹 Số suất chiếu bị xóa: 12 | ⏰ Thời điểm: 12:04:47 19/12/2025
+[12:05:00 19/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 HÁ ĐÁM - SINH NHẬT MẸ (T13) | 🆔 68fae4e03262662165d9878a | 🧹 Số suất chiếu bị xóa: 11 | ⏰ Thời điểm: 12:05:00 19/12/2025
+[12:05:04 19/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 ĐIỆN THOẠI ĐEN 2 | 🆔 68fb1c0863713362a0f46382 | 🧹 Số suất chiếu bị xóa: 18 | ⏰ Thời điểm: 12:05:04 19/12/2025
+[12:05:12 19/12/2025] [INFO] 🎬 Đã xóa phim: | 📌 QUÁI THÚ VÔ HÌNH - VÙNG ĐẤT CHẾT CHÓC | 🆔 68fb23d8e9dc3bac7c3e4c72 | 🧹 Số suất chiếu bị xóa: 20 | ⏰ Thời điểm: 12:05:12 19/12/2025
+[12:05:40 19/12/2025] [INFO] 🚀 Phim cập nhật sang đang chiếu: SCARLET (khởi chiếu 12/12/2025) → tạo suất chiếu ngay.
+[12:05:40 19/12/2025] [INFO] 🎬 Tạo lịch chiếu cho phim:  SCARLET
+[12:05:40 19/12/2025] [INFO] 📅 19/12/2025 — SCARLET chiếu tại 3 phòng
+[12:05:41 19/12/2025] [INFO] 🎥 SCARLET | 2 | 11:15 → 11:31 | 💰 88.000đ
+[12:05:41 19/12/2025] [INFO] 🎥 SCARLET | 2 | 09:00 → 09:16 | 💰 70.000đ
+[12:05:41 19/12/2025] [INFO] 🎥 SCARLET | 2 | 22:30 → 22:46 | 💰 101.000đ
+[12:05:41 19/12/2025] [INFO] 📽️ 2: 3/9 suất.
+[12:05:42 19/12/2025] [INFO] 🎥 SCARLET | 6 | 15:45 → 16:01 | 💰 110.000đ
+[12:05:42 19/12/2025] [INFO] 🎥 SCARLET | 6 | 00:00 → 00:16 | 💰 88.000đ
+[12:05:42 19/12/2025] [INFO] 📽️ 6: 2/9 suất.
+[12:05:42 19/12/2025] [INFO] 📅 20/12/2025 — SCARLET chiếu tại 3 phòng
+[12:05:42 19/12/2025] [INFO] 🎥 SCARLET | 6 | 15:15 → 15:31 | 💰 110.000đ
+[12:05:42 19/12/2025] [INFO] 🎥 SCARLET | 6 | 10:45 → 11:01 | 💰 88.000đ
+[12:05:43 19/12/2025] [INFO] 🎥 SCARLET | 6 | 22:00 → 22:16 | 💰 127.000đ
+[12:05:43 19/12/2025] [INFO] 🎥 SCARLET | 6 | 13:00 → 13:16 | 💰 110.000đ
+[12:05:43 19/12/2025] [INFO] 📽️ 6: 4/11 suất.
+[12:05:43 19/12/2025] [INFO] 🎥 SCARLET | 1 | 00:10 → 00:26 | 💰 70.000đ
+[12:05:43 19/12/2025] [INFO] 📽️ 1: 1/11 suất.
+[12:05:44 19/12/2025] [INFO] 📅 21/12/2025 — SCARLET chiếu tại 2 phòng
+[12:05:44 19/12/2025] [INFO] 🎥 SCARLET | 3 | 11:00 → 11:16 | 💰 88.000đ
+[12:05:44 19/12/2025] [INFO] 🎥 SCARLET | 3 | 15:30 → 15:46 | 💰 88.000đ
+[12:05:44 19/12/2025] [INFO] 🎥 SCARLET | 3 | 13:15 → 13:31 | 💰 88.000đ
+[12:05:44 19/12/2025] [INFO] 📽️ 3: 3/10 suất.
+[12:05:45 19/12/2025] [INFO] 🎥 SCARLET | 7 | 20:00 → 20:16 | 💰 152.000đ
+[12:05:45 19/12/2025] [INFO] 📽️ 7: 1/10 suất.
+[12:05:45 19/12/2025] [INFO] ✅ Hoàn tất tạo 14 suất chiếu cho phim: SCARLET
+[12:05:45 19/12/2025] [INFO] ✅ Hoàn tất tạo suất chiếu cho phim cập nhật: SCARLET
+[12:05:51 19/12/2025] [INFO] 🚀 Phim cập nhật sang đang chiếu: AVATAR 3: LỬA VÀ TRO TÀN (khởi chiếu 19/12/2025) → tạo suất chiếu ngay.
+[12:05:51 19/12/2025] [INFO] 🎬 Tạo lịch chiếu cho phim: 🔥 AVATAR 3: LỬA VÀ TRO TÀN
+[12:05:51 19/12/2025] [INFO] 📅 19/12/2025 — AVATAR 3: LỬA VÀ TRO TÀN chiếu tại 4 phòng
+[12:05:52 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 2 | 18:00 → 18:16 | 💰 111.000đ
+[12:05:52 19/12/2025] [INFO] 📽️ 2: 1/12 suất.
+[12:05:52 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 6 | 09:00 → 09:16 | 💰 88.000đ
+[12:05:52 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 6 | 13:30 → 13:46 | 💰 121.000đ
+[12:05:52 19/12/2025] [INFO] 📽️ 6: 2/12 suất.
+[12:05:53 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 4 | 00:00 → 00:16 | 💰 70.000đ
+[12:05:53 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 4 | 22:30 → 22:46 | 💰 111.000đ
+[12:05:53 19/12/2025] [INFO] 📽️ 4: 2/12 suất.
+[12:05:53 19/12/2025] [INFO] 📅 20/12/2025 — AVATAR 3: LỬA VÀ TRO TÀN chiếu tại 4 phòng
+[12:05:53 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 1 | 15:15 → 15:31 | 💰 97.000đ
+[12:05:54 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 1 | 13:00 → 13:16 | 💰 97.000đ
+[12:05:54 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 1 | 22:00 → 22:16 | 💰 111.000đ
+[12:05:54 19/12/2025] [INFO] 📽️ 1: 3/14 suất.
+[12:05:54 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 2 | 08:30 → 08:46 | 💰 70.000đ
+[12:05:55 19/12/2025] [INFO] 📽️ 2: 1/14 suất.
+[12:05:56 19/12/2025] [INFO] 📅 21/12/2025 — AVATAR 3: LỬA VÀ TRO TÀN chiếu tại 5 phòng
+[12:05:56 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 7 | 11:00 → 11:16 | 💰 132.000đ
+[12:05:56 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 7 | 13:15 → 13:31 | 💰 145.000đ
+[12:05:56 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 7 | 15:30 → 15:46 | 💰 145.000đ
+[12:05:56 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 7 | 17:45 → 18:01 | 💰 167.000đ
+[12:05:56 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 7 | 08:45 → 09:01 | 💰 106.000đ
+[12:05:56 19/12/2025] [INFO] 📽️ 7: 5/14 suất.
+[12:05:57 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 4 | 22:15 → 22:31 | 💰 111.000đ
+[12:05:57 19/12/2025] [INFO] 🎥 AVATAR 3: LỬA VÀ TRO TÀN | 4 | 00:15 → 00:31 | 💰 70.000đ
+[12:05:57 19/12/2025] [INFO] 📽️ 4: 2/14 suất.
+[12:05:58 19/12/2025] [INFO] ✅ Hoàn tất tạo 16 suất chiếu cho phim: AVATAR 3: LỬA VÀ TRO TÀN
+[12:05:58 19/12/2025] [INFO] ✅ Hoàn tất tạo suất chiếu cho phim cập nhật: AVATAR 3: LỬA VÀ TRO TÀN

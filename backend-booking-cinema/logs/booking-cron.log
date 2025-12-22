@@ -580,3 +580,9 @@
 [10:00:00 16/12/2025] ✅ [Cron] Không có vé nào cần hủy (mọi thứ ổn định).
 [10:41:47 16/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế C8 (BKYCOCKY) – Tiền mặt – 99.000đ
 [10:42:03 16/12/2025] ✅ [Admin] Cập nhật vé BKYCOCKY → paid
+[12:02:57 19/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:09:23 22/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:49:47 22/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:56:52 22/12/2025] 🚀 Cron job 'autoCancelBookings' đã được khởi động (mỗi 1 giờ).
+[09:57:36 22/12/2025] 🎫 [Booking] phap_2151220077@dau.edu.vn giữ ghế G8 (BKBC35N8) – QR Banking – 99.000đ
+[09:57:49 22/12/2025] ✅ [Admin] Cập nhật vé BKBC35N8 → paid

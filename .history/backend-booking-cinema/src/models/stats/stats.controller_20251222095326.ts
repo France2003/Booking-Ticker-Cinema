@@ -52,7 +52,7 @@ export const getBookingStats = async (req: Request, res: Response) => {
 
   res.json({ totalBookings, pendingBookings });
 };
-export const getBookingCountThisWeek = async (req: Request, res: Response): Promise<void> => {
+export const getBookingCountThisWeek = async (req, res) => {
   try {
     const now = new Date();
 

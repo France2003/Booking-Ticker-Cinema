@@ -108,7 +108,7 @@ export default function PromotionDetailPage() {
             {new Date(promotion.ngayBatDau).toLocaleDateString()} →{" "}
             {new Date(promotion.ngayKetThuc).toLocaleDateString()}
           </p>
-          <p className="text-gray-800 leading-relaxed">Mã giảm giá: {promotion.maCode}</p>
+
           <p className="text-gray-800 leading-relaxed">{promotion.moTa}</p>
 
           {/* Nội dung chi tiết */}

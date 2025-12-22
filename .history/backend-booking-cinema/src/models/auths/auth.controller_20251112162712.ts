@@ -90,6 +90,7 @@ export const resetPassword = async (req: Request, res: Response): Promise<void> 
     try {
         const { token } = req.params;
         const { password } = req.body;
+
         if (!token || !password) {
             res.status(400).json({ message: "Thiếu token hoặc mật khẩu" });
             return;

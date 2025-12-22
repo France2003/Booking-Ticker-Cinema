@@ -1,7 +1,6 @@
 import api from "../api";
 export const fetchUserCount = () => api.get("/api/admin/stats/users");
 export const fetchBookingStats = () => api.get("/api/admin/stats/bookings");
-export const fetchBookingsThisWeek  = () => api.get("/api/admin/stats/bookings/this-week");
 export const fetchShowsTimeCount = () => api.get("/api/admin/stats/showtimes");
 export const fetchShowsTimeThisWeek  = () => api.get("/api/admin/stats/showtimes/this-week");
 export const fetchRoomStats = () => api.get("/api/admin/stats/room");

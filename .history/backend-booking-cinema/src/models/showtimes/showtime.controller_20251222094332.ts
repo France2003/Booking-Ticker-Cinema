@@ -31,6 +31,37 @@ export const getAllShowtimes = async (req: Request, res: Response): Promise<void
         res.status(500).json({ message: "Lỗi máy chủ", error: error.message });
     }
 };
+export const getShowtimeCountThisWeek = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const now = new Date();
+
+        // ⏱ Bắt đầu tuần (Thứ 2)
+        const startOfWeek = new Date(now);
+        const day = startOfWeek.getDay() || 7; // CN = 7
+        startOfWeek.setDate(startOfWeek.getDate() - day + 1);
+        startOfWeek.setHours(0, 0, 0, 0);
+
+        // ⏱ Kết thúc tuần (CN)
+        const endOfWeek = new Date(startOfWeek);
+        endOfWeek.setDate(endOfWeek.getDate() + 6);
+        endOfWeek.setHours(23, 59, 59, 999);
+
+        const count = await Showtime.countDocuments({
+            startTime: {
+                $gte: startOfWeek,
+                $lte: endOfWeek,
+            },
+        });
+
+        res.json({
+            count,
+            startOfWeek,
+            endOfWeek,
+        });
+    } catch (err) {
+        res.status(500).json({ message: "Failed to count weekly showtimes" });
+    }
+};
 export const getShowtimeById = async (req: Request, res: Response): Promise<void> => {
     try {
         const showtime = await Showtime.findById(req.params.id)

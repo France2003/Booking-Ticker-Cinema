@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import AdminLayout from "../../../layouts/adminlayout/adminlayout";
-import { Users, ShoppingCart, DollarSign, Film, Projector, ChevronDown } from "lucide-react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
+import {
+  Users, ShoppingCart, DollarSign, Film, Projector, ChevronDown
+} from "lucide-react";
+
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip,
+  CartesianGrid, ResponsiveContainer
+} from "recharts";
+
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { DateRange } from "react-date-range";
 import type { Range } from "react-date-range";
+
 import {
-  fetchRevenueMonth, fetchRevenueRange,
+  fetchRevenueMonth,
+  fetchRevenueRange,
   fetchRevenueThisWeek,
   fetchRevenueLastWeek,
   fetchWeeklyCompare,
@@ -18,8 +27,7 @@ import {
   fetchShowsTimeCount,
   fetchUserCount,
   fetchRoomStats,
-  fetchShowsTimeThisWeek,
-  fetchBookingsThisWeek
+  fetchShowsTimeThisWeek
 } from "../../../services/stats/stats";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -31,7 +39,6 @@ export default function DashboardHome() {
   /* =============================== STATE =============================== */
   const [userCount, setUserCount] = useState(0);
   const [totalBookings, setTotalBookings] = useState(0);
-  const [weeklyBookings, setWeeklyBookings] = useState(0);
   const [pendingBookings, setPendingBookings] = useState(0);
   const [totalShowTime, setTotalShowTime] = useState(0);
   const [weeklyShowTime, setWeeklyShowTime] = useState(0);
@@ -56,7 +63,6 @@ export default function DashboardHome() {
     loadAdvancedStats();
     loadWeeklyTrend();
     loadWeeklyShowTime();
-    loadWeeklyBookings();
   }, []);
   useEffect(() => {
     loadRevenue();
@@ -68,15 +74,12 @@ export default function DashboardHome() {
     const bookings = await fetchBookingStats();
     const shows = await fetchShowsTimeCount();
     const rooms = await fetchRoomStats();
+
     setUserCount(users.data.count);
     setTotalBookings(bookings.data.totalBookings);
     setPendingBookings(bookings.data.pendingBookings);
     setTotalShowTime(shows.data.count);
     setTotalRoom(rooms.data.count);
-  };
-  const loadWeeklyBookings = async () => {
-    const res = await fetchBookingsThisWeek();
-    setWeeklyBookings(res.data.count);
   };
   const loadWeeklyShowTime = async () => {
     const res = await fetchShowsTimeThisWeek();
@@ -87,15 +90,18 @@ export default function DashboardHome() {
     const movies = await fetchTopMovies();
     const users = await fetchTopUsers();
     const rooms = await fetchRevenueByRoom();
+
     setTopMovies(movies.data);
     setTopUsers(users.data);
     setRevenueRooms(rooms.data);
   };
+
   /* =========================== TREND =========================== */
   const loadWeeklyTrend = async () => {
     const res = await fetchWeeklyCompare();
     setTrend(res.data.trend);
   };
+
   /* =========================== LOAD REVENUE =========================== */
   const loadRevenue = async () => {
     let res: { data: RevenueItem[] } | null = null;
@@ -247,9 +253,9 @@ export default function DashboardHome() {
         <StatCard title="Xuất chiếu" value={weeklyShowTime} sub={`Tổng xuất chiếu: ${totalShowTime}`} icon={<Film />} />
         <StatCard title="Người dùng" value={userCount} icon={<Users />} />
         <StatCard
-          title="Vé đã đặt (tuần này)"
-          value={weeklyBookings}
-          sub={`Tổng vé: ${totalBookings} • Chờ duyệt: ${pendingBookings}`}
+          title="Vé đã đặt"
+          value={totalBookings}
+          sub={`Chờ duyệt: ${pendingBookings}`}
           icon={<ShoppingCart />}
         />
         <StatCard

@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { DateRange } from "react-date-range";
 import type { Range } from "react-date-range";
-import {
-  fetchRevenueMonth, fetchRevenueRange,
+import { fetchRevenueMonth, fetchRevenueRange,
   fetchRevenueThisWeek,
   fetchRevenueLastWeek,
   fetchWeeklyCompare,
@@ -247,9 +246,9 @@ export default function DashboardHome() {
         <StatCard title="Xuất chiếu" value={weeklyShowTime} sub={`Tổng xuất chiếu: ${totalShowTime}`} icon={<Film />} />
         <StatCard title="Người dùng" value={userCount} icon={<Users />} />
         <StatCard
-          title="Vé đã đặt (tuần này)"
-          value={weeklyBookings}
-          sub={`Tổng vé: ${totalBookings} • Chờ duyệt: ${pendingBookings}`}
+          title="Vé đã đặt"
+          value={totalBookings}
+          sub={`Chờ duyệt: ${pendingBookings}`}
           icon={<ShoppingCart />}
         />
         <StatCard

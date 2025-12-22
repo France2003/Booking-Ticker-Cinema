@@ -8,7 +8,6 @@ router.post("/auto-generate", requireAuth, isAdmin, async (_, res) => {
   res.json({ message: "✅ Đã tạo suất chiếu mới cho ngày mai!" });
 });
 router.get("/", getAllShowtimes);/** 🎬 Lấy chi tiết suất chiếu */
-
 router.get("/:id", getShowtimeById);
 router.get("/:id/seats", getShowtimeSeats); // 🎟️ API cho User xem sơ đồ ghế
 /** 🎥 Lấy suất chiếu theo phim */

@@ -14,7 +14,6 @@ import {
     getRevenueLastWeek,
     compareWeeklyRevenue,
     getShowtimeCountThisWeek,
-    getBookingCountThisWeek,
 } from "./stats.controller";
 
 const router = Router();
@@ -24,7 +23,7 @@ router.get("/showtimes", requireAuth, isAdmin, getShowtimesCount);
 router.get("/showtimes/this-week",requireAuth, isAdmin, getShowtimeCountThisWeek);
 router.get("/room", requireAuth, isAdmin, getRoomCount);
 router.get("/bookings", requireAuth, isAdmin, getBookingStats);
-router.get("/bookings/this-week",requireAuth, isAdmin, getBookingCountThisWeek);
+
 router.get("/revenue/week", requireAuth, isAdmin, getRevenueThisWeek);
 router.get("/revenue/week/last", getRevenueLastWeek);
 router.get("/revenue/week/compare", compareWeeklyRevenue);

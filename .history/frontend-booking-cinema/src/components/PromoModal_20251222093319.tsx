@@ -3,9 +3,11 @@ import { getActivePromotions } from "../services/promotions/promotions";
 import { X } from "lucide-react";
 import confetti from "canvas-confetti";
 import type { Promotion } from "../types/promotions/promotion.type";
+import { useNavigate } from "react-router-dom";
 export default function PromoPosterModal() {
     const [open, setOpen] = useState(false);
     const [poster, setPoster] = useState<Promotion | null>(null);
+    const navigate = useNavigate
     useEffect(() => {
         const fetchData = async () => {
             try {
